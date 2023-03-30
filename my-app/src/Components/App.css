@@ -1,0 +1,6 @@
+.body-container{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
