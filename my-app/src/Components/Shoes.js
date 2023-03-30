@@ -7,7 +7,7 @@ export default function Shoes(props) {
     return (
         <>
             <Header />
-            <div className='container'>
+            <div className='container card-container'>
                 <div className='row'>
                     {
                         //loop shoes array -> display info for each shoe item

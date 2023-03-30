@@ -1,5 +1,6 @@
 import Product from "./Product";
 import Header from "./Header";
+import './App.css'
 
 export default function Clothes(props) {
     const { clothes } = props;
@@ -7,7 +8,7 @@ export default function Clothes(props) {
     return (
         <>
             <Header />
-            <div className='container'>
+            <div className='container card-container'>
                 <div className='row'>
 
                         {
