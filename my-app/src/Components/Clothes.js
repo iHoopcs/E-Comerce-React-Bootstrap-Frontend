@@ -1,13 +1,33 @@
 import Product from "./Product";
-import Header from "./Header";
 import './App.css'
+import {Container, Nav, Navbar} from "react-bootstrap";
+function ClothesNavbar ()  {
+    return (
+        <>
+            <Navbar bg="dark" variant="dark">
+                <Container>
+                    <Navbar.Brand href="/">E-Commerce</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="/shoes">Shoes</Nav.Link>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link href='/login'>Login</Nav.Link>
+                        <Nav.Link href='/signup'>Signup</Nav.Link>
+                        
+                    </Nav>
+
+                </Container>
+            </Navbar>
+        </>
+    );
+}
 
 export default function Clothes(props) {
     const { clothes } = props;
     //fetch clothes from index.js useState variable
     return (
         <>
-            <Header />
+            <ClothesNavbar />
             <div className='container card-container'>
                 <div className='row'>
 
