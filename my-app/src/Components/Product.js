@@ -1,6 +1,6 @@
 
 export default function Product(props){
-    const { item, onAdd, onRemove } = props;
+    const { item, onAdd } = props;
     return (
         //product container -> displays information
         <>

@@ -8,7 +8,7 @@ function ClothesNavbar (props)  {
         <>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="/">E-Commerce</Navbar.Brand>
+                    <Navbar.Brand href="/">E-Commerce Shopping</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="/shoes">Shoes</Nav.Link>
                     </Nav>
@@ -34,7 +34,7 @@ function ClothesNavbar (props)  {
 }
 
 export default function Clothes(props) {
-    const { clothes, onAdd, onRemove, numCartItems } = props;
+    const { clothes, onAdd, numCartItems } = props;
     //fetch clothes from index.js useState variable
     return (
         <>
@@ -50,7 +50,6 @@ export default function Clothes(props) {
                                         key={item.id}
                                         item={item}
                                         onAdd={onAdd}
-                                        onRemove={onRemove}
                                     />
                                 )
 

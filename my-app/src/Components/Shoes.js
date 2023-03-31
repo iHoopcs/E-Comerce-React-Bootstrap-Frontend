@@ -9,7 +9,7 @@ function ShoesNavbar (props)  {
         <>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="/">E-Commerce</Navbar.Brand>
+                    <Navbar.Brand href="/">E-Commerce Shopping</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="/clothes">Clothes</Nav.Link>
                     </Nav>
@@ -35,7 +35,7 @@ function ShoesNavbar (props)  {
 }
 export default function Shoes(props) {
     //fetch props from index.js useState variable
-    const { shoes, onAdd, onRemove, numCartItems } = props;
+    const { shoes, onAdd, numCartItems } = props;
     return (
         <>
             <ShoesNavbar numCartItems={numCartItems}/>
@@ -49,7 +49,6 @@ export default function Shoes(props) {
                                     key={item.id}
                                     item={item}
                                     onAdd={onAdd}
-                                    onRemove={onRemove}
                                 />
                             )
                         })

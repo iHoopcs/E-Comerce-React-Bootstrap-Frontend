@@ -32,22 +32,35 @@
     margin-top: 10px;
 }
 
-.cart-container-1{
-    border: 2px solid blue;
-    height: 200px;
-
-}
-.cart-container-2{
-    border: 2px solid red;
-    height: 200px;
-
+/*Contains both child containers below*/
+.cart-parent-container{
+    margin-top: 20px;
 }
 
+/*Items added to Cart*/
+.cart-child-container-1{
+    border: 2px solid black;
+    border-radius: 7px;
+    height: 200px;
+    margin-right: 25px;
+}
+
+/*Summary of Cart items -> totals etc*/
+.cart-child-container-2{
+    border: 2px solid black;
+    border-radius: 7px;
+    height: 200px;
+
+
+}
+
+/*Cart badge -> styling for when added to cart*/
 button.badge{
-    background-color: red;
+    background-color: indianred;
     border: none;
     color: white;
     width: 1.5rem;
+    margin-left: 5px;
 }
 
 
