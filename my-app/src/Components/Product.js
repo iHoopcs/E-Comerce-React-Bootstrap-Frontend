@@ -1,6 +1,6 @@
 
 export default function Product(props){
-    const { item } = props;
+    const { item, onAdd, onRemove } = props;
     return (
         //product container -> displays information
         <>
@@ -11,7 +11,11 @@ export default function Product(props){
                         <p>{item.name}</p>
                         <p>${item.price}</p>
                         <div>
-                            <button type='button' className='btn btn-secondary'>Add to Cart</button>
+                            <button
+                                type='button'
+                                className='btn btn-secondary'
+                                onClick={() => onAdd(item)}
+                            >Add to Cart</button>
                         </div>
                     </div>
 

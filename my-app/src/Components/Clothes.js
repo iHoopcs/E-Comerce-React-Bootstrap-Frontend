@@ -1,7 +1,9 @@
 import Product from "./Product";
 import './App.css'
 import {Container, Nav, Navbar} from "react-bootstrap";
-function ClothesNavbar ()  {
+function ClothesNavbar (props)  {
+    //use props to fetch cartItem length in index.js & display #ofitems in cart
+    const {numCartItems} = props;
     return (
         <>
             <Navbar bg="dark" variant="dark">
@@ -11,9 +13,18 @@ function ClothesNavbar ()  {
                         <Nav.Link href="/shoes">Shoes</Nav.Link>
                     </Nav>
                     <Nav>
+                        <Nav.Link href='/cart'>
+                            Cart
+                            {
+                                //render cart count
+                                //display cart length as badge, if empty display nothing
+                                numCartItems ? (
+                                    <button className='badge'>{numCartItems}</button>
+                                ): ('')
+                            }
+                        </Nav.Link>
                         <Nav.Link href='/login'>Login</Nav.Link>
                         <Nav.Link href='/signup'>Signup</Nav.Link>
-                        
                     </Nav>
 
                 </Container>
@@ -23,11 +34,11 @@ function ClothesNavbar ()  {
 }
 
 export default function Clothes(props) {
-    const { clothes } = props;
+    const { clothes, onAdd, onRemove, numCartItems } = props;
     //fetch clothes from index.js useState variable
     return (
         <>
-            <ClothesNavbar />
+            <ClothesNavbar numCartItems={numCartItems}/>
             <div className='container card-container'>
                 <div className='row'>
 
@@ -35,7 +46,12 @@ export default function Clothes(props) {
                             //loop clothes array  & display data for each clothing item
                             clothes.map((item) => {
                                 return (
-                                    <Product item={item}/>
+                                    <Product
+                                        key={item.id}
+                                        item={item}
+                                        onAdd={onAdd}
+                                        onRemove={onRemove}
+                                    />
                                 )
 
                             })
