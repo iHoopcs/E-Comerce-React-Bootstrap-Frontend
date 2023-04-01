@@ -39,8 +39,8 @@ export default function Shoes(props) {
     return (
         <>
             <ShoesNavbar numCartItems={numCartItems}/>
-            <div className='container card-container'>
-                <div className='row'>
+            <div className='container-fluid'>
+                <div className='row justify-content-center'>
                     {
                         //loop shoes array -> display info for each shoe item
                         shoes.map((item) => {

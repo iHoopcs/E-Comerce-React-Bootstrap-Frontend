@@ -4,8 +4,7 @@ import Product from "./Product";
 export default function Cart(props){
     //fetch cartItems from index.js
     const { cartItems } = props;
-    console.log('Cart')
-    console.log(cartItems)
+
     return(
         <>
             <Header />

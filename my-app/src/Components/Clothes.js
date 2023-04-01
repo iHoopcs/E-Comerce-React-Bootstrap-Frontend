@@ -39,8 +39,8 @@ export default function Clothes(props) {
     return (
         <>
             <ClothesNavbar numCartItems={numCartItems}/>
-            <div className='container card-container'>
-                <div className='row'>
+            <div className='container-fluid'>
+                <div className='row justify-content-center'>
 
                         {
                             //loop clothes array  & display data for each clothing item
