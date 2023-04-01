@@ -61,7 +61,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />}/>
+                <Route path="/" element={<Home  />}/>
                 <Route path="/clothes" element={<Clothes onAdd={onAdd} clothes={clothes} cartItems={cartItems} numCartItems={cartItems.length}/>}/>
                 <Route path="/shoes" element={<Shoes onAdd={onAdd} shoes={shoes} cartItems={cartItems} numCartItems={cartItems.length}/>}/>
                 <Route path="/login" element={<Login />}/>

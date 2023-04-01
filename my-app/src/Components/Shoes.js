@@ -7,7 +7,7 @@ function ShoesNavbar (props)  {
     const {numCartItems} = props;
     return (
         <>
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="dark" sticky='top'>
                 <Container>
                     <Navbar.Brand href="/">E-Commerce Shopping</Navbar.Brand>
                     <Nav className="me-auto">
@@ -56,8 +56,8 @@ export default function Shoes(props) {
                         })
                     }
                 </div>
-
             </div>
+
         </>
     );
 }
