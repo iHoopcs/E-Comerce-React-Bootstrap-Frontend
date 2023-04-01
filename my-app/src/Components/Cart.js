@@ -14,9 +14,7 @@ export default function Cart(props){
                         <h1>Cart</h1>
                         {
                             //display items added to cart
-                            cartItems.map((item) => {
-                                return item.name
-                            })
+                            cartItems.map((item) => <ProductCard item={item}/>)
                         }
                     </div>
 

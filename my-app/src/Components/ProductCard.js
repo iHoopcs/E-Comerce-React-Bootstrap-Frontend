@@ -1,6 +1,6 @@
 
 export default function ProductCard(props){
-    const { item, onAdd } = props;
+    const { item, onAdd, cartItems } = props;
     return (
         //product container -> displays information
         <>

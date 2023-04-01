@@ -34,8 +34,9 @@ function ClothesNavbar (props)  {
 }
 
 export default function Clothes(props) {
-    const { clothes, onAdd, numCartItems } = props;
     //fetch clothes from index.js useState variable
+    const { clothes, onAdd, numCartItems, cartItems } = props;
+    console.log(cartItems)
     return (
         <>
             <ClothesNavbar numCartItems={numCartItems}/>

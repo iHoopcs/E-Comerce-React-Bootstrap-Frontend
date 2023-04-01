@@ -35,7 +35,8 @@ function ShoesNavbar (props)  {
 }
 export default function Shoes(props) {
     //fetch props from index.js useState variable
-    const { shoes, onAdd, numCartItems } = props;
+    const { shoes, onAdd, numCartItems, cartItems } = props;
+    console.log(cartItems)
     return (
         <>
             <ShoesNavbar numCartItems={numCartItems}/>
@@ -49,6 +50,7 @@ export default function Shoes(props) {
                                     key={item.id}
                                     item={item}
                                     onAdd={onAdd}
+                                    cartItems={cartItems}
                                 />
                             )
                         })
