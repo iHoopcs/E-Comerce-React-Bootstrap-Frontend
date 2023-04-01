@@ -5,9 +5,8 @@ import {useEffect, useState} from "react";
 import DisplayCard from "./DisplayCard";
 import Clothes from "./Clothes";
 
-const Body = (props) => {
+const Body = () => {
     //fetch clothes & shoes from Home component
-    const {clothes, shoes} = props;
     const [upcomingReleases, setUpcomingReleases] = useState([]);
 
     //fetch upcoming shoes & clothing from backend
@@ -27,8 +26,7 @@ const Body = (props) => {
         return (
         <>
             <div className='container-fluid home-parent-container'>
-                <div className='row justify-content-between'>
-                    <div className='col-5 body-container'>
+                    <div className='col'>
                         <h1 className='home-display-title'>Upcoming Releases</h1>
                         <div className='row justify-content-center'>
                             {
@@ -39,27 +37,6 @@ const Body = (props) => {
                             }
                         </div>
                     </div>
-                    <div className='col' >
-                        <h1 className='home-display-title'>Clothes & Shoes</h1>
-                        <div className='container'>
-                            <div className='row justify-content-between'>
-                                {
-                                    //display clothes
-                                    clothes.map((item) => {
-                                        return <DisplayCard item={item} />
-                                    })
-                                }
-                                {
-                                    //display shoes
-                                    shoes.map((item) => {
-                                        return <DisplayCard item={item} />
-                                    })
-                                }
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
             </div>
 
         </>
