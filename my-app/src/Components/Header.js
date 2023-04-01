@@ -2,7 +2,7 @@ import {Nav, Navbar, Container} from "react-bootstrap";
 export default function Header ()  {
     return (
         <>
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="dark" sticky='top'>
                 <Container>
                     <Navbar.Brand href="/">E-Commerce</Navbar.Brand>
                     <Nav className="me-auto">
