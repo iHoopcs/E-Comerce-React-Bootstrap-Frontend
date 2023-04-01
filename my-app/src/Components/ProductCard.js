@@ -8,8 +8,12 @@ export default function ProductCard(props){
             <Card className='mb-4 mx-4' >
                 <Card.Img variant='top' src={item.imageUrl} height='600px' style={{objectFit: 'cover'}} />
                 <Card.Body>
-                    <h5>{item.brand} {item.name}</h5>
-                    <h5>${item.price}</h5>
+
+                    <Card.Title>
+                        <p>{item.brand} {item.name}</p>
+                        <p className='text-muted'>${item.price}</p>
+                    </Card.Title>
+
                     <button
                         type='button'
                         className='btn btn-secondary'
