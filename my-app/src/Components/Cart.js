@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Product from "./Product";
+import ProductCard from "./ProductCard";
 
 export default function Cart(props){
     //fetch cartItems from index.js

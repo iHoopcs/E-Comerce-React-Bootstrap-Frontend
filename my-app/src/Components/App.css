@@ -1,24 +1,26 @@
 
 /*Homepage container styling*/
-.body-container{
-    border: 2px solid black;
-    border-radius: 5px;
-    margin-top: 10px;
+.home-parent-container{
+    margin-top: 20px;
+}
+.home-display-title{
     text-align: center;
+    font-family: Dialog;
 }
 
+/*Login & Signup Styling*/
 .form-title{
     text-align: center;
     margin-bottom: 10px;
 }
-
 .form-container{
     border: 2px solid black;
     border-radius: 5px;
     padding: 20px;
     margin-top: 25px;
 }
-/*Product card styling*/
+
+/*ProductCard styling*/
 .card{
     width: 20%;
     background-color: antiquewhite;
@@ -28,29 +30,21 @@
     margin-top: 10px;
 }
 
-/*Contains both child containers below*/
+/*Cart styling*/
 .cart-parent-container{
     margin-top: 20px;
 }
-
-/*Items added to Cart*/
 .cart-child-container-1{
     border: 2px solid black;
     border-radius: 7px;
     height: 200px;
     margin-right: 25px;
 }
-
-/*Summary of Cart items -> totals etc*/
 .cart-child-container-2{
     border: 2px solid black;
     border-radius: 7px;
     height: 200px;
-
-
 }
-
-/*Cart badge -> styling for when added to cart*/
 button.badge{
     background-color: indianred;
     border: none;

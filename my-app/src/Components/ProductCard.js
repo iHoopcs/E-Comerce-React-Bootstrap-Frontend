@@ -1,5 +1,5 @@
 
-export default function Product(props){
+export default function ProductCard(props){
     const { item, onAdd } = props;
     return (
         //product container -> displays information

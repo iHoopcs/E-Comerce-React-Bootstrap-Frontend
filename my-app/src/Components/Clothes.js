@@ -1,4 +1,4 @@
-import Product from "./Product";
+import ProductCard from "./ProductCard";
 import './App.css'
 import {Container, Nav, Navbar} from "react-bootstrap";
 function ClothesNavbar (props)  {
@@ -46,7 +46,7 @@ export default function Clothes(props) {
                             //loop clothes array  & display data for each clothing item
                             clothes.map((item) => {
                                 return (
-                                    <Product
+                                    <ProductCard
                                         key={item.id}
                                         item={item}
                                         onAdd={onAdd}

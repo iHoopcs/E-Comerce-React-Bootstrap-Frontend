@@ -1,5 +1,5 @@
 import './App.css';
-import Product from "./Product";
+import ProductCard from "./ProductCard";
 import {Container, Nav, Navbar} from "react-bootstrap";
 
 function ShoesNavbar (props)  {
@@ -45,7 +45,7 @@ export default function Shoes(props) {
                         //loop shoes array -> display info for each shoe item
                         shoes.map((item) => {
                             return (
-                                <Product
+                                <ProductCard
                                     key={item.id}
                                     item={item}
                                     onAdd={onAdd}
