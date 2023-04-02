@@ -1,4 +1,3 @@
-import {Card, CardImg} from "react-bootstrap";
 import './Products.css';
 
 //Display Products w/o add to cart button -> homepage use
@@ -6,12 +5,14 @@ export default function DisplayCard(props){
     const { item } = props;
     return (
         <>
-            <Card className='mb-4 mx-4'>
-                <Card.Img variant='top' src={item.imageUrl} height='600px' width='500px' style={{objectFit: 'cover'}}/>
-                <Card.Body>
-                    <h5>{item.brand} {item.name}</h5>
-                </Card.Body>
-            </Card>
+            <div className='card'>
+                <img src={item.imageUrl} alt={item.name} className='card-img-top'/>
+                <div className='card-body'>
+                    <h4>{item.brand} {item.name}</h4>
+                    <h5 className='text-muted'>${item.price}</h5>
+                </div>
+            </div>
+
 
         </>
 

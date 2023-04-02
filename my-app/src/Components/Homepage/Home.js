@@ -3,7 +3,6 @@ import Header from "../Header";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import DisplayCard from "../Products/DisplayCard";
-import Clothes from "../Products/Clothes";
 
 const Body = () => {
     //fetch clothes & shoes from Homepage component
@@ -25,7 +24,7 @@ const Body = () => {
 
         return (
         <>
-            <div className='container-fluid home-parent-container'>
+            <div className='container home-parent-container'>
                     <div className='col'>
                         <h1 className='home-display-title'>Upcoming Releases</h1>
                         <div className='row justify-content-center'>

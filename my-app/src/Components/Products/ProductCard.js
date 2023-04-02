@@ -5,23 +5,14 @@ export default function ProductCard(props){
     return (
         //product container -> displays information
         <>
-            <Card className='mb-4 mx-4' >
-                <Card.Img variant='top' src={item.imageUrl} height='600px' style={{objectFit: 'cover'}} />
-                <Card.Body>
-
-                    <Card.Title>
-                        <p>{item.brand} {item.name}</p>
-                        <p className='text-muted'>${item.price}</p>
-                    </Card.Title>
-
-                    <button
-                        type='button'
-                        className='btn btn-secondary'
-                        onClick={() => onAdd(item)}
-                    >Add to Cart</button>
-                </Card.Body>
-
-            </Card>
+            <div className='card mb-4 mx-4'>
+                <img src={item.imageUrl} alt={item.name} className='card-img-top'/>
+                <div className='card-body'>
+                    <h4>{item.brand} {item.name}</h4>
+                    <h5 className='text-muted'>${item.price}</h5>
+                </div>
+                <button className='btn btn-secondary' onClick={onAdd}>Add to Cart</button>
+            </div>
         </>
 
     );
