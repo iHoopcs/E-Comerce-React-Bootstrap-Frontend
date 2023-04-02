@@ -14,12 +14,14 @@ export default function Cart(props){
                         <h1>Cart</h1>
                         {
                             //display items added to cart
+                            cartItems.length === 0 ? <p>No items added to cart</p> :
                             cartItems.map((item) => <ProductCard item={item}/>)
                         }
                     </div>
 
                     <div className='col-lg-4 cart-child-container-2' >
                         <h1>Summary</h1>
+                        <a href='/checkout'><button className='btn btn-outline-dark '>Checkout</button></a>
                     </div>
                 </div>
 

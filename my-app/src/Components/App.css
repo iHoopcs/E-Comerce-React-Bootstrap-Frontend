@@ -53,5 +53,21 @@ button.badge{
     margin-left: 5px;
 }
 
+/*Checkout Styling*/
+.checkout-columns{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.checkout-form{
+    width: 100%;
+}
+
+/*Confirmation Page Styling*/
+.confirmation-container{
+    text-align: center;
+    font-family: Dialog;
+    text-align: center;
+}
+
 
 

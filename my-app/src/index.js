@@ -10,7 +10,8 @@ import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import Shoes from "./Components/Shoes";
 import Cart from "./Components/Cart";
-
+import Checkout from "./Components/Checkout";
+import OrderConfirmation from "./Components/OrderConfirmation";
 
 const App = () => {
     const [shoes, setShoes] = useState([]);
@@ -67,6 +68,8 @@ const App = () => {
                 <Route path="/login" element={<Login />}/>
                 <Route path="/signup" element={<Signup />}/>
                 <Route path='/cart' element={<Cart cartItems={cartItems}/>}/>
+                <Route path='checkout' element={<Checkout />}/>
+                <Route path='/confirmationPage' element={<OrderConfirmation />}/>
             </Routes>
         </BrowserRouter>
     );

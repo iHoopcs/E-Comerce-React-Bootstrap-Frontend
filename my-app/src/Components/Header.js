@@ -4,7 +4,7 @@ export default function Header ()  {
         <>
             <Navbar bg="dark" variant="dark" sticky='top'>
                 <Container>
-                    <Navbar.Brand href="/">E-Commerce</Navbar.Brand>
+                    <Navbar.Brand href="/">E-Commerce Shopping</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="/shoes">Shoes</Nav.Link>
                         <Nav.Link href="/clothes">Clothes</Nav.Link>
