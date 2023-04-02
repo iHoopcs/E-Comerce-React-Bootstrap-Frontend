@@ -1,17 +1,16 @@
-import './App.css';
 import ProductCard from "./ProductCard";
+import './Products.css';
 import {Container, Nav, Navbar} from "react-bootstrap";
-
-function ShoesNavbar (props)  {
+function ClothesNavbar (props)  {
     //use props to fetch cartItem length in index.js & display #ofitems in cart
     const {numCartItems} = props;
     return (
         <>
-            <Navbar bg="dark" variant="dark" sticky='top'>
+            <Navbar bg="dark" variant="dark" sticky='top' className='mb-4'>
                 <Container>
                     <Navbar.Brand href="/">E-Commerce Shopping</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="/clothes">Clothes</Nav.Link>
+                        <Nav.Link href="/shoes">Shoes</Nav.Link>
                     </Nav>
                     <Nav>
                         <Nav.Link href='/cart'>
@@ -33,31 +32,32 @@ function ShoesNavbar (props)  {
         </>
     );
 }
-export default function Shoes(props) {
-    //fetch props from index.js useState variable
-    const { shoes, onAdd, numCartItems, cartItems } = props;
+
+export default function Clothes(props) {
+    //fetch clothes from index.js useState variable
+    const { clothes, onAdd, numCartItems, cartItems } = props;
     console.log(cartItems)
     return (
         <>
-            <ShoesNavbar numCartItems={numCartItems}/>
+            <ClothesNavbar numCartItems={numCartItems}/>
             <div className='container-fluid'>
                 <div className='row justify-content-center'>
-                    {
-                        //loop shoes array -> display info for each shoe item
-                        shoes.map((item) => {
-                            return (
-                                <ProductCard
-                                    key={item.id}
-                                    item={item}
-                                    onAdd={onAdd}
-                                    cartItems={cartItems}
-                                />
-                            )
-                        })
-                    }
+
+                        {
+                            //loop clothes array  & display data for each clothing item
+                            clothes.map((item) => {
+                                return (
+                                    <ProductCard
+                                        key={item.id}
+                                        item={item}
+                                        onAdd={onAdd}
+                                    />
+                                )
+
+                            })
+                        }
                 </div>
             </div>
-
         </>
     );
 }

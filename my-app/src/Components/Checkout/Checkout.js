@@ -1,6 +1,6 @@
 import {Button, Container, Form, Nav, Navbar} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
-import './App.css';
+import './CartCheckout.css';
 function CheckoutNavbar(props){
     //use props to fetch cartItem length in index.js & display #ofitems in cart
     const {numCartItems} = props;

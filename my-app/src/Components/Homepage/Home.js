@@ -1,12 +1,12 @@
-import './App.css'
-import Header from "./Header";
+import './Home.css';
+import Header from "../Header";
 import axios from "axios";
 import {useEffect, useState} from "react";
-import DisplayCard from "./DisplayCard";
-import Clothes from "./Clothes";
+import DisplayCard from "../Products/DisplayCard";
+import Clothes from "../Products/Clothes";
 
 const Body = () => {
-    //fetch clothes & shoes from Home component
+    //fetch clothes & shoes from Homepage component
     const [upcomingReleases, setUpcomingReleases] = useState([]);
 
     //fetch upcoming shoes & clothing from backend

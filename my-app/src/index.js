@@ -4,14 +4,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 
-import Home from "./Components/Home";
-import Clothes from "./Components/Clothes";
-import Login from "./Components/Login";
-import Signup from "./Components/Signup";
-import Shoes from "./Components/Shoes";
-import Cart from "./Components/Cart";
-import Checkout from "./Components/Checkout";
-import OrderConfirmation from "./Components/OrderConfirmation";
+import Home from "./Components/Homepage/Home";
+import Clothes from "./Components/Products/Clothes";
+import Login from "./Components/LoginSignup/Login";
+import Signup from "./Components/LoginSignup/Signup";
+import Shoes from "./Components/Products/Shoes";
+import Cart from "./Components/Checkout/Cart";
+import Checkout from "./Components/Checkout/Checkout";
+import OrderConfirmation from "./Components/Checkout/OrderConfirmation";
 
 const App = () => {
     const [shoes, setShoes] = useState([]);

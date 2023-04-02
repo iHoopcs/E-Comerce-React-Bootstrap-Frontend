@@ -1,5 +1,5 @@
-import Header from "./Header";
-import ProductCard from "./ProductCard";
+import Header from "../Header";
+import ProductCard from "../Products/ProductCard";
 
 export default function Cart(props){
     //fetch cartItems from index.js
@@ -21,7 +21,7 @@ export default function Cart(props){
 
                     <div className='col-lg-4 cart-child-container-2' >
                         <h1>Summary</h1>
-                        <a href='/checkout'><button className='btn btn-outline-dark '>Checkout</button></a>
+                        <a href='/my-app/src/Components/Checkout/Checkout'><button className='btn btn-outline-dark '>Checkout</button></a>
                     </div>
                 </div>
 

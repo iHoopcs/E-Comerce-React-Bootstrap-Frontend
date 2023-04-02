@@ -1,7 +1,7 @@
+import {Card, CardImg} from "react-bootstrap";
+import './Products.css';
 
 //Display Products w/o add to cart button -> homepage use
-import {Card, CardImg} from "react-bootstrap";
-
 export default function DisplayCard(props){
     const { item } = props;
     return (

@@ -1,5 +1,5 @@
 import {Card} from "react-bootstrap";
-
+import './Products.css';
 export default function ProductCard(props){
     const { item, onAdd, cartItems } = props;
     return (
