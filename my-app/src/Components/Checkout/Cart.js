@@ -21,7 +21,7 @@ export default function Cart(props){
 
                     <div className='col-lg-4 cart-child-container-2' >
                         <h1>Summary</h1>
-                        <a href='/my-app/src/Components/Checkout/Checkout'><button className='btn btn-outline-dark '>Checkout</button></a>
+                        <a href='/checkout'><button className='btn btn-outline-dark '>Checkout</button></a>
                     </div>
                 </div>
 

@@ -36,10 +36,7 @@ function CheckoutNavbar(props){
 
 export default function Checkout(){
     //hook to switch pages on form submission -> show order confirmation
-    let navigate = useNavigate();
-    const onPlaceOrder = () => {
-        navigate('/confirmationPage')
-    }
+    const navigate = useNavigate();
     return(
         <>
             <CheckoutNavbar />
@@ -89,7 +86,7 @@ export default function Checkout(){
                                         <Form.Control className='mx-3 mb-5' placeholder="XXX" />
                                     </Form.Group>
                                 </div>
-                                <Button variant="outline-info" type="submit" onClick={onPlaceOrder}>
+                                <Button variant="outline-info" type="submit" onClick={() => {navigate('/confirmationPage')}}>
                                     Place Order
                                 </Button>
                             </Form>
