@@ -12,6 +12,7 @@ import Shoes from "./Components/Products/Shoes";
 import Cart from "./Components/Checkout/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderConfirmation from "./Components/Checkout/OrderConfirmation";
+import Context from "./Components/Context";
 
 const App = () => {
     const [shoes, setShoes] = useState([]);
@@ -41,33 +42,16 @@ const App = () => {
         fetchClothingData();
     }, []);
 
-    //cart functionality
-    const [cartItems, setCartItems] = useState([]);
-    const onAdd = (item) => {
-        alert('Added to Cart!');
-        //check if item already in cart
-        const exist = cartItems.find((x) => x.id === item.id);
-        if (exist){
-            //if item in cart, find by id & increment by one
-            const newCartItems = cartItems.map((x) =>
-            x.id === item.id ? {...exist, qty: exist.qty + 1} : x //if not correct id, no alter
-            );
-            //update Cart
-            setCartItems(newCartItems)
-        }else{ //if item not in cart already, add it
-            const newCartItems =[...cartItems, {...item, qty:1}]; //add item to existing cart
-            setCartItems(newCartItems)
-        }
-    }
+
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home  />}/>
-                <Route path="/clothes" element={<Clothes onAdd={onAdd} clothes={clothes} numCartItems={cartItems.length}/>}/>
-                <Route path="/shoes" element={<Shoes onAdd={onAdd} shoes={shoes} numCartItems={cartItems.length}/>}/>
+                <Route path="/clothes" element={<Clothes clothes={clothes} />}/>
+                <Route path="/shoes" element={<Shoes  shoes={shoes} />}/>
                 <Route path="/login" element={<Login />}/>
                 <Route path="/signup" element={<Signup />}/>
-                <Route path='/cart' element={<Cart cartItems={cartItems}/>}/>
+                <Route path='/cart' element={<Cart />}/>
                 <Route path='checkout' element={<Checkout />}/>
                 <Route path='/confirmationPage' element={<OrderConfirmation />}/>
             </Routes>
@@ -77,7 +61,10 @@ const App = () => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <Context>
+          <App />
+      </Context>
+
   </React.StrictMode>
 );
 

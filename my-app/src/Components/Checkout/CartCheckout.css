@@ -5,7 +5,7 @@
 .cart-child-container-1{
     border: 2px solid black;
     border-radius: 7px;
-    height: 200px;
+    height: fit-content;
     margin-right: 25px;
 }
 .cart-child-container-2{
@@ -19,6 +19,12 @@ button.badge{
     color: white;
     width: 1.5rem;
     margin-left: 5px;
+}
+
+.sample-cart-item{
+    border: 2px solid black;
+    width: 200px;
+    height: 250px;
 }
 
 /*Checkout Styling*/
@@ -36,6 +42,8 @@ button.badge{
     font-family: Dialog;
     text-align: center;
 }
+
+
 
 
 

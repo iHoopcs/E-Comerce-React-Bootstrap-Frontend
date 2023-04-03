@@ -31,7 +31,7 @@ const Body = () => {
                             {
                                 //display each item in Display card comp
                                 upcomingReleases.map((item)=> {
-                                    return <DisplayCard item={item}/>
+                                    return <DisplayCard item={item} key={item.id}/>
                                 })
                             }
                         </div>

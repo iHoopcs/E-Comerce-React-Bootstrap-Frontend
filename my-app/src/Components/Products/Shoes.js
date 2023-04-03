@@ -1,6 +1,8 @@
 import './Products.css';
 import ProductCard from "./ProductCard";
 import {Container, Nav, Navbar} from "react-bootstrap";
+import {useContext} from "react";
+import {CartContext} from "../Context";
 
 function ShoesNavbar (props)  {
     //use props to fetch cartItem length in index.js & display #ofitems in cart
@@ -35,8 +37,11 @@ function ShoesNavbar (props)  {
 }
 export default function Shoes(props) {
     //fetch props from index.js useState variable
-    const { shoes, onAdd, numCartItems, cartItems } = props;
-    console.log(cartItems)
+    const { shoes } = props;
+
+    //fetch global variables from Context.js -> use to pass length to ShoesNavbar comp
+    const {cart} = useContext(CartContext);
+    let numCartItems = cart.length;
     return (
         <>
             <ShoesNavbar numCartItems={numCartItems}/>
@@ -49,8 +54,6 @@ export default function Shoes(props) {
                                 <ProductCard
                                     key={item.id}
                                     item={item}
-                                    onAdd={onAdd}
-                                    cartItems={cartItems}
                                 />
                             )
                         })
