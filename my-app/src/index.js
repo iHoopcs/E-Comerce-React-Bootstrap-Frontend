@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,7 +12,7 @@ import Shoes from "./Components/Products/Shoes";
 import Cart from "./Components/Checkout/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderConfirmation from "./Components/Checkout/OrderConfirmation";
-import Context from "./Components/Context";
+import Context, {CartContext} from "./Components/Context";
 
 const App = () => {
     const [shoes, setShoes] = useState([]);
@@ -42,7 +42,8 @@ const App = () => {
         fetchClothingData();
     }, []);
 
-
+    const {cart} = useContext(CartContext);
+    console.log(cart)
     return (
         <BrowserRouter>
             <Routes>
@@ -64,7 +65,6 @@ root.render(
       <Context>
           <App />
       </Context>
-
   </React.StrictMode>
 );
 

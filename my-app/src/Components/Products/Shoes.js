@@ -4,9 +4,11 @@ import {Container, Nav, Navbar} from "react-bootstrap";
 import {useContext} from "react";
 import {CartContext} from "../Context";
 
-function ShoesNavbar (props)  {
-    //use props to fetch cartItem length in index.js & display #ofitems in cart
-    const {numCartItems} = props;
+function ShoesNavbar ()  {
+    //useContext to fetch global variable
+    const {cart} = useContext(CartContext);
+    let numCartItems = cart.length;
+
     return (
         <>
             <Navbar bg="dark" variant="dark" sticky='top' className='mb-4'>
@@ -29,7 +31,6 @@ function ShoesNavbar (props)  {
                         <Nav.Link href='/login'>Login</Nav.Link>
                         <Nav.Link href='/signup'>Signup</Nav.Link>
                     </Nav>
-
                 </Container>
             </Navbar>
         </>
@@ -39,12 +40,11 @@ export default function Shoes(props) {
     //fetch props from index.js useState variable
     const { shoes } = props;
 
-    //fetch global variables from Context.js -> use to pass length to ShoesNavbar comp
     const {cart} = useContext(CartContext);
-    let numCartItems = cart.length;
+    console.log(cart)
     return (
         <>
-            <ShoesNavbar numCartItems={numCartItems}/>
+            <ShoesNavbar />
             <div className='container-fluid'>
                 <div className='row justify-content-center'>
                     {

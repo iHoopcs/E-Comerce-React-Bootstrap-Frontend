@@ -1,4 +1,3 @@
-import {Card} from "react-bootstrap";
 import './Products.css';
 import {useContext} from "react";
 import {CartContext} from "../Context";
@@ -7,7 +6,7 @@ export default function ProductCard(props){
 
     const {cart, setCart} = useContext(CartContext);
     return (
-        //product container -> displays information
+        //product display card -> displays information
         <>
             <div className='card mb-4 mx-4'>
                 <img src={item.imageUrl} alt={item.name} className='card-img-top'/>
@@ -18,12 +17,10 @@ export default function ProductCard(props){
                 <button
                     className='btn btn-secondary'
                     onClick={() => {
-                        console.log('Added to Cart!')
                         setCart([...cart, item])
                     }}
                 >Add to Cart</button>
             </div>
         </>
-
     );
 }

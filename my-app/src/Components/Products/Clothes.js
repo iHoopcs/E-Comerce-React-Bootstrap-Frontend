@@ -3,9 +3,11 @@ import './Products.css';
 import {Container, Nav, Navbar} from "react-bootstrap";
 import {useContext} from "react";
 import {CartContext} from "../Context";
-function ClothesNavbar (props)  {
-    //use props to fetch cartItem length in index.js & display #ofitems in cart
-    const {numCartItems} = props;
+function ClothesNavbar ()  {
+    //useContext to fetch global variable
+    const {cart} = useContext(CartContext);
+    let numCartItems = cart.length;
+
     return (
         <>
             <Navbar bg="dark" variant="dark" sticky='top' className='mb-4'>
@@ -39,16 +41,11 @@ export default function Clothes(props) {
     //fetch clothes from index.js useState variable
     const { clothes } = props;
 
-    //fetch global variables from Context.js -> use to pass length to ClothesNavbar comp
-    const {cart} = useContext(CartContext);
-    let numCartItems = cart.length;
-    console.log(cart)
     return (
         <>
-            <ClothesNavbar numCartItems={numCartItems}/>
+            <ClothesNavbar/>
             <div className='container-fluid'>
                 <div className='row justify-content-center'>
-
                         {
                             //loop clothes array  & display data for each clothing item
                             clothes.map((item) => {
@@ -58,7 +55,6 @@ export default function Clothes(props) {
                                         item={item}
                                     />
                                 )
-
                             })
                         }
                 </div>

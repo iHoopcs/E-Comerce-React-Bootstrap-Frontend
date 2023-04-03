@@ -1,15 +1,13 @@
 import Header from "../Header";
-import {useContext, useEffect} from "react";
+import {useContext} from "react";
 import {CartContext} from "../Context";
-import CheckoutCard from "./CheckoutCard";
+import DisplayCard from "../Products/DisplayCard";
+
 
 export default function Cart(){
     const {cart, setCart} = useContext(CartContext);
     console.log(useContext(CartContext))
 
-    useEffect(() => {
-        setCart([...cart, cart]);
-    }, [])
     return(
         <>
             <Header />
@@ -19,7 +17,7 @@ export default function Cart(){
                         <h1>Cart</h1>
                         <div>
                             {
-                                cart.map((item) => <CheckoutCard item={item} key={item.id}/>)
+                                cart.map((item) => <DisplayCard item={item} key={item.id}/>)
                             }
                         </div>
                     </div>
