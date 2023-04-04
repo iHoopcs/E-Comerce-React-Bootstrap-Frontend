@@ -1,6 +1,6 @@
 import {Form} from "react-bootstrap";
 import {Button} from "react-bootstrap";
-import Header from "./Header";
+import Header from "../Header";
 export default function Signup(){
     return (
         <>

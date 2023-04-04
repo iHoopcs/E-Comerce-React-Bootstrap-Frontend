@@ -1,12 +1,17 @@
 import ProductCard from "./ProductCard";
-import './App.css'
+import './Products.css';
 import {Container, Nav, Navbar} from "react-bootstrap";
-function ClothesNavbar (props)  {
-    //use props to fetch cartItem length in index.js & display #ofitems in cart
-    const {numCartItems} = props;
+import {useContext} from "react";
+import {CartContext} from "../Checkout/Cart";
+
+function ClothesNavbar ()  {
+    //useContext to fetch global variable
+    const {cart} = useContext(CartContext);
+    let numCartItems = cart.length;
+
     return (
         <>
-            <Navbar bg="dark" variant="dark" sticky='top'>
+            <Navbar bg="dark" variant="dark" sticky='top' className='mb-4'>
                 <Container>
                     <Navbar.Brand href="/">E-Commerce Shopping</Navbar.Brand>
                     <Nav className="me-auto">
@@ -35,14 +40,13 @@ function ClothesNavbar (props)  {
 
 export default function Clothes(props) {
     //fetch clothes from index.js useState variable
-    const { clothes, onAdd, numCartItems, cartItems } = props;
-    console.log(cartItems)
+    const { clothes } = props;
+
     return (
         <>
-            <ClothesNavbar numCartItems={numCartItems}/>
+            <ClothesNavbar/>
             <div className='container-fluid'>
                 <div className='row justify-content-center'>
-
                         {
                             //loop clothes array  & display data for each clothing item
                             clothes.map((item) => {
@@ -50,10 +54,8 @@ export default function Clothes(props) {
                                     <ProductCard
                                         key={item.id}
                                         item={item}
-                                        onAdd={onAdd}
                                     />
                                 )
-
                             })
                         }
                 </div>

@@ -1,0 +1,48 @@
+/*Cart styling*/
+.cart-parent-container{
+    margin-top: 20px;
+}
+.cart-child-container-1{
+    border: 2px solid black;
+    border-radius: 7px;
+    height: fit-content;
+}
+.cart-child-container-2{
+    border: 2px solid black;
+    border-radius: 7px;
+    height: 200px;
+}
+button.badge{
+    background-color: indianred;
+    border: none;
+    color: white;
+    width: 1.5rem;
+    margin-left: 5px;
+}
+
+.sample-cart-item{
+    border: 2px solid black;
+    width: 200px;
+    height: 250px;
+}
+
+/*Checkout Styling*/
+.checkout-columns{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.checkout-form{
+    width: 100%;
+}
+
+/*Confirmation Page Styling*/
+.confirmation-container{
+    text-align: center;
+    font-family: Dialog;
+    text-align: center;
+}
+
+
+
+
+

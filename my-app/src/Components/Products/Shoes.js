@@ -1,13 +1,17 @@
-import './App.css';
+import './Products.css';
 import ProductCard from "./ProductCard";
 import {Container, Nav, Navbar} from "react-bootstrap";
+import {useContext} from "react";
+import {CartContext} from "../Checkout/Cart";
 
-function ShoesNavbar (props)  {
-    //use props to fetch cartItem length in index.js & display #ofitems in cart
-    const {numCartItems} = props;
+function ShoesNavbar ()  {
+    //useContext to fetch global variable
+    const {cart} = useContext(CartContext);
+    let numCartItems = cart.length;
+
     return (
         <>
-            <Navbar bg="dark" variant="dark" sticky='top'>
+            <Navbar bg="dark" variant="dark" sticky='top' className='mb-4'>
                 <Container>
                     <Navbar.Brand href="/">E-Commerce Shopping</Navbar.Brand>
                     <Nav className="me-auto">
@@ -27,7 +31,6 @@ function ShoesNavbar (props)  {
                         <Nav.Link href='/login'>Login</Nav.Link>
                         <Nav.Link href='/signup'>Signup</Nav.Link>
                     </Nav>
-
                 </Container>
             </Navbar>
         </>
@@ -35,11 +38,11 @@ function ShoesNavbar (props)  {
 }
 export default function Shoes(props) {
     //fetch props from index.js useState variable
-    const { shoes, onAdd, numCartItems, cartItems } = props;
-    console.log(cartItems)
+    const { shoes } = props;
+
     return (
         <>
-            <ShoesNavbar numCartItems={numCartItems}/>
+            <ShoesNavbar />
             <div className='container-fluid'>
                 <div className='row justify-content-center'>
                     {
@@ -49,8 +52,6 @@ export default function Shoes(props) {
                                 <ProductCard
                                     key={item.id}
                                     item={item}
-                                    onAdd={onAdd}
-                                    cartItems={cartItems}
                                 />
                             )
                         })
