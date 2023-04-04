@@ -49,6 +49,7 @@ export default function Clothes(props) {
                                     <ProductCard
                                         key={item.id}
                                         item={item}
+                                        cart={cart}
                                     />
                                 )
                             })

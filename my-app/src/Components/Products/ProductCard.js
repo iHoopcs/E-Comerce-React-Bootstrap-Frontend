@@ -1,14 +1,12 @@
 import './Products.css';
 import axios from "axios";
-import {useState} from "react";
 
 export default function ProductCard(props){
-    const { item } = props;
+    const { item, cart } = props;
 
     //make post request onclick -> send item to backend -> add to db
-    const sendItem = async () => {
+    const addItem = async () => {
         alert('Added to Cart!')
-        setButtonDisabled(true);
         try {
             await axios.post('http://localhost:8080/addToCart', {
                 id: item.id,
@@ -22,11 +20,10 @@ export default function ProductCard(props){
         }catch (error){
             console.log(error.response);
         }
+        window.location.reload();
     }
 
 
-
-    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     return (
         //product display card -> displays information
@@ -37,10 +34,10 @@ export default function ProductCard(props){
                     <h4>{item.brand} {item.name}</h4>
                     <h5 className='text-muted'>${item.price}</h5>
                 </div>
+
                 <button
                     className='btn btn-secondary'
-                    onClick={sendItem}
-                    disabled={buttonDisabled}
+                    onClick={addItem}
                 >Add to Cart</button>
             </div>
         </>

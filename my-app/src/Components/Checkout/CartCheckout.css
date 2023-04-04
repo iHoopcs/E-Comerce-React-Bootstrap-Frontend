@@ -1,8 +1,15 @@
 
 /*Checkout Styling*/
-.checkout-columns{
+.checkout-column-1{
     border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 10px;
+    height: fit-content;
+}
+.checkout-column-2{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    height: fit-content;
 }
 .checkout-form{
     width: 100%;
@@ -13,6 +20,11 @@
     text-align: center;
     font-family: Dialog;
     text-align: center;
+}
+
+.checkout-item-image{
+    object-fit: cover;
+    width: 100%;
 }
 
 

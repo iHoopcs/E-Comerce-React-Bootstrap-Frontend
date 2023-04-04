@@ -17,6 +17,7 @@ export default function Cart(props){
                         <h1>Cart</h1>
                         <div>
                             {
+                                cart.length === 0 ? <p className='text-danger'>No Items Added to Cart</p> :
                                 cart.map((item) => {
                                     return (
                                         <DisplayCartItem item={item} key={item.id}/>
@@ -38,13 +39,10 @@ export default function Cart(props){
                                                 <h6>{item.brand} {item.name}</h6>
                                                 <h6>x{item.qty}</h6>
                                                 <h5>${price}</h5>
-
                                             </div>
                                         </div>
                                     </>
-
-                                    )
-
+                                )
                             })
                         }
                         <div className='row'>

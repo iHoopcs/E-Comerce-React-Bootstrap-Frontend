@@ -19,8 +19,8 @@ export default function DisplayCartItem(props){
         }catch(error){
             console.log(error.response);
         }
+        window.location.reload();
     }
-
 
     //post request to db to decrement item qty
     const decrementQty = async () => {
@@ -37,8 +37,8 @@ export default function DisplayCartItem(props){
         }catch(error){
             console.log(error.response);
         }
+        window.location.reload();
     }
-
 
     return(
         <>
@@ -56,7 +56,6 @@ export default function DisplayCartItem(props){
                                 <p className='text-muted'>Qty: {item.qty}</p>
                             </div>
                         </div>
-
                     </div>
 
                     <div className='col mt-5'>
