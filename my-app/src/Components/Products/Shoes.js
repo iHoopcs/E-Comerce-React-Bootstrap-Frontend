@@ -45,7 +45,6 @@ export default function Shoes(props) {
                                 <ProductCard
                                     key={item.id}
                                     item={item}
-                                    cart={cart}
                                 />
                             )
                         })

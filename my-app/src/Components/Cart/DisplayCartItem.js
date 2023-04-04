@@ -1,5 +1,4 @@
 import axios from "axios";
-import {useEffect} from "react";
 
 export default function DisplayCartItem(props){
     const {item} = props;
@@ -25,7 +24,7 @@ export default function DisplayCartItem(props){
     //post request to db to decrement item qty
     const decrementQty = async () => {
         try{
-            await axios.put('http://localhost:8080/incrementQty', {
+            await axios.put('http://localhost:8080/decrementQty', {
                 id: item.id,
                 name: item.name,
                 brand: item.brand,

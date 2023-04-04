@@ -2,7 +2,8 @@ import './Products.css';
 import axios from "axios";
 
 export default function ProductCard(props){
-    const { item, cart } = props;
+    const { item } = props;
+
 
     //make post request onclick -> send item to backend -> add to db
     const addItem = async () => {
@@ -34,11 +35,7 @@ export default function ProductCard(props){
                     <h4>{item.brand} {item.name}</h4>
                     <h5 className='text-muted'>${item.price}</h5>
                 </div>
-
-                <button
-                    className='btn btn-secondary'
-                    onClick={addItem}
-                >Add to Cart</button>
+                <button className='btn btn-secondary' onClick={addItem}>Add to Cart</button>
             </div>
         </>
     );

@@ -3,7 +3,6 @@ import DisplayCartItem from "./DisplayCartItem";
 import './Cart.css'
 import {useState} from "react";
 
-
 export default function Cart(props){
     const { cart } = props;
     const [subtotal, setSubtotal] = useState(0);
@@ -31,14 +30,13 @@ export default function Cart(props){
                         <h1>Summary</h1>
                         {
                             cart.map((item) => {
-                                let price = item.price * item.qty;
+                                let productPrice = item.price * item.qty;
                                 return(
                                     <>
                                         <div className='row'>
-                                            <div className='d-flex justify-content-between mt-3'>
+                                            <div className='d-flex justify-content-between mt-4'>
                                                 <h6>{item.brand} {item.name}</h6>
-                                                <h6>x{item.qty}</h6>
-                                                <h5>${price}</h5>
+                                                <h5>${productPrice}</h5>
                                             </div>
                                         </div>
                                     </>
@@ -46,13 +44,14 @@ export default function Cart(props){
                             })
                         }
                         <div className='row'>
-                            <div className='d-flex justify-content-end mt-5'>
-                                <h5 >Subtotal: </h5>
-                                <h5>${subtotal}</h5>
+                            <div className='d-flex mt-5 justify-content-between'>
+                                <a href='/checkout'><button className='btn btn-outline-dark'>Checkout</button></a>
+                                <h5>Subtotal: ${subtotal}</h5>
+
                             </div>
                         </div>
 
-                        <a href='/checkout'><button className='btn btn-outline-dark mt-5 mb-3'>Checkout</button></a>
+
                     </div>
                 </div>
 

@@ -2,10 +2,8 @@ import ProductCard from "./ProductCard";
 import './Products.css';
 import {Container, Nav, Navbar} from "react-bootstrap";
 
-
 function ClothesNavbar (props)  {
     const { cart } = props;
-
 
     return (
         <>
@@ -36,7 +34,6 @@ export default function Clothes(props) {
     //fetch clothes from index.js useState variable
     const { clothes, cart } = props;
 
-
     return (
         <>
             <ClothesNavbar cart={cart}/>
@@ -49,7 +46,6 @@ export default function Clothes(props) {
                                     <ProductCard
                                         key={item.id}
                                         item={item}
-                                        cart={cart}
                                     />
                                 )
                             })
