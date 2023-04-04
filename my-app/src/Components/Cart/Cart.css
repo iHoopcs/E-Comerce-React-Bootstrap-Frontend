@@ -4,13 +4,21 @@
 }
 .cart-child-container-1{
     border: 2px solid black;
-    border-radius: 7px;
+    border-radius: 10px;
     height: fit-content;
+    padding: 15px;
 }
 .cart-child-container-2{
     border: 2px solid black;
-    border-radius: 7px;
-    height: 200px;
+    border-radius: 10px;
+    height: fit-content;
+    padding: 15px;
+}
+
+.column2{
+    border: solid black;
+    width: fit-content;
+    float: right;
 }
 
 

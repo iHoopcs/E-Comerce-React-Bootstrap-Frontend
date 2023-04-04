@@ -36,7 +36,7 @@ export default function Clothes(props) {
     //fetch clothes from index.js useState variable
     const { clothes, cart } = props;
 
-    console.log(cart)
+
     return (
         <>
             <ClothesNavbar cart={cart}/>
