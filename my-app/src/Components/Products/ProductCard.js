@@ -1,10 +1,24 @@
 import './Products.css';
-import {useContext} from "react";
-import {CartContext} from "../Context";
+import axios from "axios";
 export default function ProductCard(props){
     const { item } = props;
 
-    const {cart, setCart} = useContext(CartContext);
+    //make post request onclick -> send item to backend -> add to db
+    const sendItem = async () => {
+        alert('Added to Cart!')
+        try {
+            await axios.post('http://localhost:8080/addToCart', {
+                name: item.name,
+                brand: item.brand,
+                price: item.price,
+                imageUrl: item.imageUrl
+            } )
+                .then(response => {console.log(response)});
+        }catch (error){
+            console.log(error.response);
+        }
+    }
+
     return (
         //product display card -> displays information
         <>
@@ -16,9 +30,7 @@ export default function ProductCard(props){
                 </div>
                 <button
                     className='btn btn-secondary'
-                    onClick={() => {
-                        setCart([...cart, item])
-                    }}
+                    onClick={sendItem}
                 >Add to Cart</button>
             </div>
         </>

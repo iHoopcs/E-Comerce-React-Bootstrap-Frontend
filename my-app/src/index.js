@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,7 +12,7 @@ import Shoes from "./Components/Products/Shoes";
 import Cart from "./Components/Checkout/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderConfirmation from "./Components/Checkout/OrderConfirmation";
-import Context, {CartContext} from "./Components/Context";
+import {Context} from "./Components/Checkout/Cart";
 
 const App = () => {
     const [shoes, setShoes] = useState([]);
@@ -20,7 +20,7 @@ const App = () => {
     const fetchShoesData = async () => {
         try{
             const response = await axios('http://localhost:8080/shoes');
-            console.log(response.data);
+            //console.log(response.data);
             setShoes(response.data);
         }catch (error){
             console.log(error.response);
@@ -32,7 +32,7 @@ const App = () => {
     const fetchClothingData = async () => {
         try{
             const response = await axios('http://localhost:8080/clothing');
-            console.log(response.data);
+            //console.log(response.data);
             setClothes(response.data);
         }catch (error){
             console.log(error.response);
@@ -42,8 +42,6 @@ const App = () => {
         fetchClothingData();
     }, []);
 
-    const {cart} = useContext(CartContext);
-    console.log(cart)
     return (
         <BrowserRouter>
             <Routes>

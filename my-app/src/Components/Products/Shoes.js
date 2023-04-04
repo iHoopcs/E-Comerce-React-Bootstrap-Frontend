@@ -2,7 +2,7 @@ import './Products.css';
 import ProductCard from "./ProductCard";
 import {Container, Nav, Navbar} from "react-bootstrap";
 import {useContext} from "react";
-import {CartContext} from "../Context";
+import {CartContext} from "../Checkout/Cart";
 
 function ShoesNavbar ()  {
     //useContext to fetch global variable
@@ -40,8 +40,6 @@ export default function Shoes(props) {
     //fetch props from index.js useState variable
     const { shoes } = props;
 
-    const {cart} = useContext(CartContext);
-    console.log(cart)
     return (
         <>
             <ShoesNavbar />

@@ -2,7 +2,8 @@ import ProductCard from "./ProductCard";
 import './Products.css';
 import {Container, Nav, Navbar} from "react-bootstrap";
 import {useContext} from "react";
-import {CartContext} from "../Context";
+import {CartContext} from "../Checkout/Cart";
+
 function ClothesNavbar ()  {
     //useContext to fetch global variable
     const {cart} = useContext(CartContext);
