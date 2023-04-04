@@ -34,7 +34,8 @@ function CheckoutNavbar(props){
 }
 
 
-export default function Checkout(){
+export default function Checkout(props){
+    const { cart } = props;
     //hook to switch pages on form submission -> show order confirmation
     const navigate = useNavigate();
     return(
@@ -95,6 +96,17 @@ export default function Checkout(){
 
                     <div className='col checkout-columns'>
                         <h1 className='home-display-title'>In Your Cart</h1>
+
+                        {
+                            cart.map((item) => {
+                                return (
+                                   <>
+
+                                       <p className='text-center mt-5 mb-4'>{item.brand} {item.name}</p>
+                                   </>
+                                );
+                            })
+                        }
                     </div>
                 </div>
             </div>

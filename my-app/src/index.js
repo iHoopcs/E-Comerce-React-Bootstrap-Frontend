@@ -9,14 +9,13 @@ import Clothes from "./Components/Products/Clothes";
 import Login from "./Components/LoginSignup/Login";
 import Signup from "./Components/LoginSignup/Signup";
 import Shoes from "./Components/Products/Shoes";
-import Cart from "./Components/Checkout/Cart";
+import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderConfirmation from "./Components/Checkout/OrderConfirmation";
-import {Context} from "./Components/Checkout/Cart";
 
 const App = () => {
+    //fetch shoes from api
     const [shoes, setShoes] = useState([]);
-    const [clothes, setClothes] = useState([]);
     const fetchShoesData = async () => {
         try{
             const response = await axios('http://localhost:8080/shoes');
@@ -29,6 +28,9 @@ const App = () => {
     useEffect(() => {
         fetchShoesData();
     }, []);
+
+    //fetch clothes from api
+    const [clothes, setClothes] = useState([]);
     const fetchClothingData = async () => {
         try{
             const response = await axios('http://localhost:8080/clothing');
@@ -42,16 +44,30 @@ const App = () => {
         fetchClothingData();
     }, []);
 
+    //fetch cartItems from api
+    const [cart, setCart] = useState([]);
+    const fetchCart = async () => {
+        try {
+            const response = await axios.get('http://localhost:8080/cart')
+            setCart(response.data);
+        }catch (error){
+            console.log(error.response);
+        }
+    }
+    useEffect(() => {
+        fetchCart();
+    },[])
+
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home  />}/>
-                <Route path="/clothes" element={<Clothes clothes={clothes} />}/>
-                <Route path="/shoes" element={<Shoes  shoes={shoes} />}/>
+                <Route path="/clothes" element={<Clothes clothes={clothes} cart={cart}/>}/>
+                <Route path="/shoes" element={<Shoes  shoes={shoes} cart={cart}/>}/>
                 <Route path="/login" element={<Login />}/>
                 <Route path="/signup" element={<Signup />}/>
-                <Route path='/cart' element={<Cart />}/>
-                <Route path='checkout' element={<Checkout />}/>
+                <Route path='/cart' element={<Cart cart={cart}/>}/>
+                <Route path='checkout' element={<Checkout cart={cart}/>}/>
                 <Route path='/confirmationPage' element={<OrderConfirmation />}/>
             </Routes>
         </BrowserRouter>
@@ -60,9 +76,7 @@ const App = () => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Context>
-          <App />
-      </Context>
+      <App />
   </React.StrictMode>
 );
 

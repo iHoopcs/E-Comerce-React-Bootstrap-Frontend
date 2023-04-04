@@ -1,30 +1,10 @@
 import Header from "../Header";
-import axios from "axios";
-import {createContext, useContext, useEffect, useState} from "react";
-import DisplayCard from "../Products/DisplayCard";
 import DisplayCartItem from "./DisplayCartItem";
+import './Cart.css'
 
-export const CartContext = createContext();
-export function Context({ children }){
-    const [cart, setCart] = useState([]);
-    return <CartContext.Provider value={{cart, setCart}}>{ children }</CartContext.Provider>
-}
+export default function Cart(props){
+    const { cart } = props;
 
-export default function Cart(){
-    const {cart, setCart} = useContext(CartContext);
-    const fetchCart = async () => {
-        try {
-            const response = await axios.get('http://localhost:8080/cart')
-            setCart(response.data);
-        }catch (error){
-            console.log(error.response);
-        }
-    }
-    useEffect(() => {
-        fetchCart();
-    },[])
-
-    console.log(cart);
     return(
         <>
             <Header />
