@@ -43,6 +43,7 @@ export default function Checkout(props){
 
 
     const placeOrder = () =>{
+        //send delete request -> delete all cart items in db
         axios.delete('http://localhost:8080/resetCart')
             .then(response => {console.log(response)});
 
