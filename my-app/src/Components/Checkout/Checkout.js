@@ -1,6 +1,7 @@
 import {Button, Container, Form, Nav, Navbar} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import './CartCheckout.css';
+import axios from "axios";
 function CheckoutNavbar(props){
     //use props to fetch cartItem length in index.js & display #ofitems in cart
     const {numCartItems} = props;
@@ -34,16 +35,31 @@ function CheckoutNavbar(props){
 }
 
 
-export default function Checkout(){
+export default function Checkout(props){
+    const { cart } = props;
+
     //hook to switch pages on form submission -> show order confirmation
     const navigate = useNavigate();
+
+
+    const placeOrder = () =>{
+        //send delete request -> delete all cart items in db
+        axios.delete('http://localhost:8080/resetCart')
+            .then(response => {console.log(response)});
+
+        //onclick -> go to route
+        navigate('/confirmationPage')
+
+
+
+    }
     return(
         <>
             <CheckoutNavbar />
             <h1 className='home-display-title mt-5'>Checkout</h1>
             <div className='container mt-5'>
                 <div className='row'>
-                    <div className='col-7 checkout-columns mx-5'>
+                    <div className='col-7 checkout-column-1 mx-5'>
                         <h1 className='home-display-title mt-4'>Shipping & Payment</h1>
                         <div className='container p-5'>
                             <Form>
@@ -86,15 +102,31 @@ export default function Checkout(){
                                         <Form.Control className='mx-3 mb-5' placeholder="XXX" />
                                     </Form.Group>
                                 </div>
-                                <Button variant="outline-info" type="submit" onClick={() => {navigate('/confirmationPage')}}>
+                                <Button variant="outline-info" type="submit" onClick={placeOrder}>
                                     Place Order
                                 </Button>
                             </Form>
                         </div>
                     </div>
 
-                    <div className='col checkout-columns'>
+                    <div className='col checkout-column-2'>
                         <h1 className='home-display-title'>In Your Cart</h1>
+                        {
+                            cart.map((item) => {
+                                return (
+                                   <>
+                                       <div className='d-flex '>
+                                               <div className='card mb-4 mx-4'>
+                                                   <img src={item.imageUrl} alt={item.name} className='card-img'/>
+                                               </div>
+                                               <p className='mt-5'>{item.brand} {item.name}</p>
+                                       </div>
+
+
+                                   </>
+                                );
+                            })
+                        }
                     </div>
                 </div>
             </div>

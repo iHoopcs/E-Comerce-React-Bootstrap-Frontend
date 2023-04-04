@@ -1,0 +1,29 @@
+/*Cart styling*/
+.cart-parent-container{
+    margin-top: 20px;
+}
+.cart-child-container-1{
+    border: 2px solid black;
+    border-radius: 10px;
+    height: fit-content;
+    padding: 15px;
+}
+.cart-child-container-2{
+    border: 2px solid black;
+    border-radius: 10px;
+    height: fit-content;
+    padding: 15px;
+}
+
+.column2{
+    border: solid black;
+    width: fit-content;
+    float: right;
+}
+
+
+.sample-cart-item{
+    border: 2px solid black;
+    width: 200px;
+    height: 250px;
+}

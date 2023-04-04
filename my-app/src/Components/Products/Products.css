@@ -11,3 +11,10 @@
     height: 15vw;
     object-fit: cover;
 }
+button.badge{
+    background-color: indianred;
+    border: none;
+    color: white;
+    width: 1.5rem;
+    margin-left: 5px;
+}

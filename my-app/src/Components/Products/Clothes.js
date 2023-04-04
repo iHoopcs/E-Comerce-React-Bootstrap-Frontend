@@ -1,13 +1,9 @@
 import ProductCard from "./ProductCard";
 import './Products.css';
 import {Container, Nav, Navbar} from "react-bootstrap";
-import {useContext} from "react";
-import {CartContext} from "../Checkout/Cart";
 
-function ClothesNavbar ()  {
-    //useContext to fetch global variable
-    const {cart} = useContext(CartContext);
-    let numCartItems = cart.length;
+function ClothesNavbar (props)  {
+    const { cart } = props;
 
     return (
         <>
@@ -21,11 +17,7 @@ function ClothesNavbar ()  {
                         <Nav.Link href='/cart'>
                             Cart
                             {
-                                //render cart count
-                                //display cart length as badge, if empty display nothing
-                                numCartItems ? (
-                                    <button className='badge'>{numCartItems}</button>
-                                ): ('')
+                                cart.length === 0 ? '': <button className='badge'>{cart.length}</button>
                             }
                         </Nav.Link>
                         <Nav.Link href='/login'>Login</Nav.Link>
@@ -40,11 +32,11 @@ function ClothesNavbar ()  {
 
 export default function Clothes(props) {
     //fetch clothes from index.js useState variable
-    const { clothes } = props;
+    const { clothes, cart } = props;
 
     return (
         <>
-            <ClothesNavbar/>
+            <ClothesNavbar cart={cart}/>
             <div className='container-fluid'>
                 <div className='row justify-content-center'>
                         {
