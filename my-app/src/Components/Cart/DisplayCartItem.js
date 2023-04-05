@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import './Cart.css'
 export default function DisplayCartItem(props){
     const {item} = props;
 
@@ -42,14 +42,16 @@ export default function DisplayCartItem(props){
     return(
         <>
             <div className='container'>
-                <div className='row just'>
-                    <div className='col-9'>
-                        <div className='d-flex'>
-                            <div className='card mb-4 mx-5 mt-4'>
-                                <img src={item.imageUrl} alt={item.name} />
+                <div className='row mx-5'>
+                    <div className='col-8'>
+                        <div className='row g-0'>
+                            <div className='col-9'>
+                                <div className='card cart-card-image'>
+                                    <img src={item.imageUrl} alt={item.name} className='card-img' />
+                                </div>
                             </div>
 
-                            <div className='mt-4 mx-4' >
+                            <div className='col-2'>
                                 <h5>{item.brand} {item.name}</h5>
                                 <p className='text-muted'>${item.price}</p>
                                 <p className='text-muted'>Qty: {item.qty}</p>
@@ -57,7 +59,7 @@ export default function DisplayCartItem(props){
                         </div>
                     </div>
 
-                    <div className='col mt-5'>
+                    <div className='col mt-5 mx-4'>
                         <div>
                             <button
                                 className='btn btn-secondary mx-1 '
@@ -69,6 +71,8 @@ export default function DisplayCartItem(props){
                             >-</button>
                         </div>
                     </div>
+
+                    <hr className='mb-5 mt-5'></hr>
                 </div>
 
             </div>

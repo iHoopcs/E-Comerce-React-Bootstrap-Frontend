@@ -2,6 +2,7 @@ import {Button, Container, Form, Nav, Navbar} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import './CartCheckout.css';
 import axios from "axios";
+import DisplayCheckoutItem from "./DisplayCheckoutItem";
 function CheckoutNavbar(props){
     //use props to fetch cartItem length in index.js & display #ofitems in cart
     const {cart} = props;
@@ -105,23 +106,11 @@ export default function Checkout(props){
                         </div>
                     </div>
 
-                    <div className='col checkout-column-2'>
-                        <h1 className='home-display-title'>In Your Cart</h1>
+                    <div className='col checkout-column-1'>
+                        <h1 className='in-your-cart-title mb-4'>In Your Cart</h1>
                         {
-                            cart.map((item) => {
-                                return (
-                                   <>
-                                       <div className='d-flex '>
-                                               <div className='card mb-4 mx-4'>
-                                                   <img src={item.imageUrl} alt={item.name} className='card-img'/>
-                                               </div>
-                                               <p className='mt-5'>{item.brand} {item.name}</p>
-                                       </div>
+                            cart.map((item) => <DisplayCheckoutItem item={item}/>)
 
-
-                                   </>
-                                );
-                            })
                         }
                     </div>
                 </div>

@@ -16,6 +16,16 @@
     margin-top: 15px;
 }
 
+.checkout-card-image{
+    width: 7rem;
+}
+
+.in-your-cart-title{
+    text-align: center;
+    font-family: Dialog;
+
+}
+
 /*Confirmation Page Styling*/
 .confirmation-container{
     text-align: center;

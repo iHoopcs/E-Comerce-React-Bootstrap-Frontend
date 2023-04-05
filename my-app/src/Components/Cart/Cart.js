@@ -11,9 +11,9 @@ export default function Cart(props){
         <>
             <Header />
             <div className='container cart-parent-container'>
-                <div className='d-flex justify-content-center'>
-                    <div className='col-md-7 cart-child-container-1'>
-                        <h1 className='mx-5' >Cart</h1>
+                <div className='row justify-content-center'>
+                    <div className='col-md-6 cart-child-container-1'>
+                        <h1 className='mx-5 mb-4' >Cart</h1>
                         <div>
                             {
                                 cart.length === 0 ? <p className='text-danger'>No Items Added to Cart</p> :
