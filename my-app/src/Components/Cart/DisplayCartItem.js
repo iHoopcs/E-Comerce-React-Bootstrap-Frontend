@@ -59,7 +59,7 @@ export default function DisplayCartItem(props){
                         </div>
                     </div>
 
-                    <div className='col mt-5 mx-4'>
+                    <div className='col mt-5 '>
                         <div>
                             <button
                                 className='btn btn-secondary mx-1 '
