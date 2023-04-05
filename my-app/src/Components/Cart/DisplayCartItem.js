@@ -42,7 +42,7 @@ export default function DisplayCartItem(props){
     return(
         <>
             <div className='container'>
-                <div className='row mx-5'>
+                <div className='row mx-4 g-5'>
                     <div className='col-8'>
                         <div className='row g-0'>
                             <div className='col-9'>
@@ -59,7 +59,7 @@ export default function DisplayCartItem(props){
                         </div>
                     </div>
 
-                    <div className='col mt-5 '>
+                    <div className='col mt-5 mx-3'>
                         <div>
                             <button
                                 className='btn btn-secondary mx-1 '
