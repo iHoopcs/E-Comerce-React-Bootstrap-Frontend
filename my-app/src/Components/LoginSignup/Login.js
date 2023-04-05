@@ -2,14 +2,23 @@ import {Form} from "react-bootstrap";
 import {Button} from "react-bootstrap";
 import Header from "../Header";
 import './LoginSignup.css';
+import {useNavigate} from "react-router-dom";
 export default function Login(){
+    let navigate = useNavigate();
+
+    function handleSubmit(e){
+        //prevent default form submission
+        e.preventDefault();
+        alert('Navigating to Homepage...')
+        navigate('/');
+    }
+
     return (
         <>
             <Header />
-            <div className=' container form-container mt-5'>
+            <div className='container form-container mt-5'>
                 <h2 className='form-title'> Please enter login credentials</h2>
-                <Form>
-                    <div className='col-12'>
+                <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Username</Form.Label>
                             <Form.Control type="username" placeholder="Username" />
@@ -19,8 +28,7 @@ export default function Login(){
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" placeholder="Password" />
                         </Form.Group>
-                    </div>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" >
                         Login
                     </Button>
                 </Form>
