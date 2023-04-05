@@ -1,14 +1,23 @@
 import {Form} from "react-bootstrap";
 import {Button} from "react-bootstrap";
 import Header from "../Header";
+import {useNavigate} from "react-router-dom";
 
 export default function Signup(){
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert('Account Created \nProceed to Login')
+        navigate('/login');
+    }
+
     return (
         <>
             <Header />
             <div className='container form-container '>
                 <h2 className='form-title'>Please fill out information</h2>
-                <Form action='http://localhost:8080/addUser' method='post'>
+                <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>First Name</Form.Label>
                         <Form.Control type="text" placeholder="First Name" name='firstName' />
