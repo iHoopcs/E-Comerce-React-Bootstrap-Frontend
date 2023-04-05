@@ -4,7 +4,7 @@ import './CartCheckout.css';
 import axios from "axios";
 function CheckoutNavbar(props){
     //use props to fetch cartItem length in index.js & display #ofitems in cart
-    const {numCartItems} = props;
+    const {cart} = props;
     return (
         <>
             <Navbar bg="dark" variant="dark" sticky='top'>
@@ -20,8 +20,8 @@ function CheckoutNavbar(props){
                             {
                                 //render cart count
                                 //display cart length as badge, if empty display nothing
-                                numCartItems ? (
-                                    <button className='badge'>{numCartItems}</button>
+                                cart.length ? (
+                                    <button className='badge'>{cart.length}</button>
                                 ): ('')
                             }
                         </Nav.Link>
@@ -34,13 +34,11 @@ function CheckoutNavbar(props){
     );
 }
 
-
 export default function Checkout(props){
     const { cart } = props;
 
     //hook to switch pages on form submission -> show order confirmation
     const navigate = useNavigate();
-
 
     const placeOrder = () =>{
         //send delete request -> delete all cart items in db
@@ -49,15 +47,13 @@ export default function Checkout(props){
 
         //onclick -> go to route
         navigate('/confirmationPage')
-
-
-
     }
+
     return(
         <>
-            <CheckoutNavbar />
-            <h1 className='home-display-title mt-5'>Checkout</h1>
-            <div className='container mt-5'>
+            <CheckoutNavbar cart={cart}/>
+            <h1 className='checkout-form-title'>Checkout</h1>
+            <div className='container mt-4 mb-4'>
                 <div className='row'>
                     <div className='col-7 checkout-column-1 mx-5'>
                         <h1 className='home-display-title mt-4'>Shipping & Payment</h1>
