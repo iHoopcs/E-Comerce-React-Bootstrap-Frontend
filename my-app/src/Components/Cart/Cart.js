@@ -13,10 +13,10 @@ export default function Cart(props){
             <div className='container cart-parent-container'>
                 <div className='row justify-content-center'>
                     <div className='col-md-6 cart-child-container-1'>
-                        <h1 className='mx-5 mb-4' >Cart</h1>
+                        <h1 className='mx-3 mb-4' >Cart</h1>
                         <div>
                             {
-                                cart.length === 0 ? <p className='text-danger'>No Items Added to Cart</p> :
+                                cart.length === 0 ? <p className='text-danger mx-3'>No Items Added to Cart</p> :
                                 cart.map((item) => {
                                     return (
                                         <DisplayCartItem item={item} key={item.id}/>
@@ -45,7 +45,10 @@ export default function Cart(props){
                         }
                         <div className='row'>
                             <div className='d-flex mt-5 justify-content-between'>
-                                <a href='/checkout'><button className='btn btn-outline-dark'>Checkout</button></a>
+                                {
+                                    cart.length === 0 ? '' : <a href='/checkout'><button className='btn btn-outline-dark'>Checkout</button></a>
+                                }
+
                                 <h5>Subtotal: ${subtotal}</h5>
 
                             </div>
