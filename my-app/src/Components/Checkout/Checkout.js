@@ -99,9 +99,10 @@ export default function Checkout(props){
                                         <Form.Control className='mx-3 mb-5' placeholder="XXX" />
                                     </Form.Group>
                                 </div>
-                                <Button variant="outline-info" type="submit" onClick={placeOrder}>
-                                    Place Order
-                                </Button>
+                                {
+                                    cart.length === 0 ? '' : <Button variant="outline-info" type="submit" onClick={placeOrder}>Place Order</Button>
+                                }
+
                             </Form>
                         </div>
                     </div>
@@ -109,6 +110,7 @@ export default function Checkout(props){
                     <div className='col checkout-column-1'>
                         <h1 className='in-your-cart-title mb-4'>In Your Cart</h1>
                         {
+                            cart.length === 0 ? <p className='text-danger text-center'>No Items Added to Cart</p> :
                             cart.map((item) => <DisplayCheckoutItem item={item}/>)
 
                         }
