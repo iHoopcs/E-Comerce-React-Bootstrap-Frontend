@@ -6,7 +6,7 @@
     border: 2px solid black;
     border-radius: 10px;
     height: fit-content;
-    padding: 15px;
+    padding-top: 10px;
 }
 .cart-child-container-2{
     border: 2px solid black;
@@ -15,15 +15,8 @@
     padding: 15px;
 }
 
-.column2{
-    border: solid black;
-    width: fit-content;
-    float: right;
+.cart-card-image{
+    width: 9rem;
 }
 
 
-.sample-cart-item{
-    border: 2px solid black;
-    width: 200px;
-    height: 250px;
-}

@@ -1,4 +1,3 @@
-
 /*Checkout Styling*/
 .checkout-column-1{
     border: 2px solid black;
@@ -11,21 +10,28 @@
     padding: 15px;
     height: fit-content;
 }
-.checkout-form{
-    width: 100%;
+.checkout-form-title{
+    text-align: center;
+    font-family: Dialog;
+    margin-top: 15px;
+}
+
+.checkout-card-image{
+    width: 7rem;
+}
+
+.in-your-cart-title{
+    text-align: center;
+    font-family: Dialog;
+
 }
 
 /*Confirmation Page Styling*/
 .confirmation-container{
     text-align: center;
     font-family: Dialog;
-    text-align: center;
 }
 
-.checkout-item-image{
-    object-fit: cover;
-    width: 100%;
-}
 
 
 
