@@ -5,13 +5,15 @@ import {useEffect, useState} from "react";
 import DisplayCard from "../Products/DisplayCard";
 
 const Body = () => {
+    const API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
+
     //fetch clothes & shoes from Homepage component
     const [upcomingReleases, setUpcomingReleases] = useState([]);
 
     //fetch upcoming shoes & clothing from backend
     const fetchUpcomingReleases = async () => {
         try {
-            const response = await axios('http://localhost:8080/upcomingReleases');
+            const response = await axios(API_URL + '/upcomingReleases');
             console.log(response.data);
             setUpcomingReleases(response.data);
         }catch (error){

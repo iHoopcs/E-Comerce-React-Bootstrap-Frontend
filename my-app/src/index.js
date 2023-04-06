@@ -14,11 +14,13 @@ import Checkout from "./Components/Checkout/Checkout";
 import OrderConfirmation from "./Components/Checkout/OrderConfirmation";
 
 const App = () => {
+    const API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
+    
     //fetch shoes from api
     const [shoes, setShoes] = useState([]);
     const fetchShoesData = async () => {
         try{
-            const response = await axios('http://localhost:8080/shoes');
+            const response = await axios(API_URL + '/shoes');
             //console.log(response.data);
             setShoes(response.data);
         }catch (error){
@@ -33,7 +35,7 @@ const App = () => {
     const [clothes, setClothes] = useState([]);
     const fetchClothingData = async () => {
         try{
-            const response = await axios('http://localhost:8080/clothing');
+            const response = await axios(API_URL + '/clothing');
             //console.log(response.data);
             setClothes(response.data);
         }catch (error){
@@ -48,7 +50,7 @@ const App = () => {
     const [cart, setCart] = useState([]);
     const fetchCart = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/cart')
+            const response = await axios.get(API_URL + '/cart')
             setCart(response.data);
         }catch (error){
             console.log(error.response);

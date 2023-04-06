@@ -2,14 +2,15 @@ import './Products.css';
 import axios from "axios";
 
 export default function ProductCard(props){
+    const API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
+    
     const { item } = props;
-
 
     //make post request onclick -> send item to backend -> add to db
     const addItem = async () => {
         alert('Added to Cart!')
         try {
-            await axios.post('http://localhost:8080/addToCart', {
+            await axios.post(API_URL + '/addToCart', {
                 id: item.id,
                 name: item.name,
                 brand: item.brand,
