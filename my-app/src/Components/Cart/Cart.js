@@ -1,12 +1,21 @@
 import Header from "../Header";
 import DisplayCartItem from "./DisplayCartItem";
 import './Cart.css'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export default function Cart(props){
     const { cart } = props;
-    const [subtotal, setSubtotal] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
 
+    //every refresh / change dependent on cart useState variable -> execute code -> calculate total price of cart itemss
+    useEffect(() => {
+        let calculateTotal = 0; 
+        for (let i=0; i<cart.length; i++){
+            calculateTotal = calculateTotal + (cart[i].price * cart[i].qty); 
+        }
+        setTotalPrice(calculateTotal); 
+    },[cart])
+     
     return(
         <>
             <Header />
@@ -49,7 +58,7 @@ export default function Cart(props){
                                     cart.length === 0 ? '' : <a href='/checkout'><button className='btn btn-outline-dark'>Checkout</button></a>
                                 }
 
-                                <h5>Subtotal: ${subtotal}</h5>
+                                <h5>Total: ${totalPrice}</h5>
 
                             </div>
                         </div>
