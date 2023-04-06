@@ -17,6 +17,7 @@ export default function DisplayCheckoutItem(props){
 
                     <div className='col-md'>
                         <p className='mt-3'>{item.brand} {item.name}</p>
+                        <p>x{item.qty}</p>
                     </div>
 
                 </div>
