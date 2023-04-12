@@ -31,7 +31,7 @@ export default function ProductCard(props){
         //product display card -> displays information
         <>
             <div className='card mb-4 mx-4'>
-                <img src={item.imageUrl} alt={item.name} className='card-img-top'/>
+                <a href= {`/products/${item.id}/${item.name}`}><img src={item.imageUrl} alt={item.name} className='card-img-top'/></a>
                 <div className='card-body'>
                     <h4>{item.brand} {item.name}</h4>
                     <h5 className='text-muted'>${item.price}</h5>

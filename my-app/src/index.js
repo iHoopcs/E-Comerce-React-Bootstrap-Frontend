@@ -12,6 +12,7 @@ import Shoes from "./Components/Products/Shoes";
 import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderConfirmation from "./Components/Checkout/OrderConfirmation";
+import DetailedProductPage from './Components/Products/DetailedProductPage';
 
 const App = () => {
     const API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
@@ -71,6 +72,27 @@ const App = () => {
                 <Route path='/cart' element={<Cart cart={cart}/>}/>
                 <Route path='checkout' element={<Checkout cart={cart}/>}/>
                 <Route path='/confirmationPage' element={<OrderConfirmation />}/>
+                {
+                    shoes.map((product) => {
+                        return (
+                            <Route 
+                                path={`/products/${product.id}/${product.name}`}
+                                element={<DetailedProductPage product={product} cart={cart}/>}
+                            />
+                        )
+                    })
+                }
+
+                {
+                    clothes.map((product) => {
+                        return (
+                            <Route 
+                                path={`/products/${product.id}/${product.name}`}
+                                element={<DetailedProductPage product={product} cart={cart}/>}
+                                />
+                        )
+                    })
+                }
             </Routes>
         </BrowserRouter>
     );
