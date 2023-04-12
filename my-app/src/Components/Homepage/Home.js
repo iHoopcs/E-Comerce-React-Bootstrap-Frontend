@@ -28,7 +28,7 @@ const Body = () => {
         <>
             <div className='container home-parent-container'>
                     <div className='col'>
-                        <h1 className='home-display-title'>Upcoming Releases</h1>
+                        <h1 className='home-display-title'>Coming Soon...</h1>
                         <div className='row justify-content-center'>
                             {
                                 //display each item in Display card comp
