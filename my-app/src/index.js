@@ -72,11 +72,13 @@ const App = () => {
                 <Route path='/cart' element={<Cart cart={cart}/>}/>
                 <Route path='checkout' element={<Checkout cart={cart}/>}/>
                 <Route path='/confirmationPage' element={<OrderConfirmation />}/>
+                
                 {
+                    //create individual routes for each product -> render each info page
                     shoes.map((product) => {
                         return (
                             <Route 
-                                path={`/products/${product.id}/${product.name}`}
+                                path={`/products/${product.id}/${product.brand}/${product.name}`}
                                 element={<DetailedProductPage product={product} cart={cart}/>}
                             />
                         )
@@ -84,10 +86,11 @@ const App = () => {
                 }
 
                 {
+                    //create individual routes for each product -> render each info page
                     clothes.map((product) => {
                         return (
                             <Route 
-                                path={`/products/${product.id}/${product.name}`}
+                                path={`/products/${product.id}/${product.brand}/${product.name}`}
                                 element={<DetailedProductPage product={product} cart={cart}/>}
                                 />
                         )

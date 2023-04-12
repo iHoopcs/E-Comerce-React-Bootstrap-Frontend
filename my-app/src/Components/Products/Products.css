@@ -8,7 +8,7 @@
 }
 .card-img-top{
     width: 100%;
-    height: 15vw;
+    height: 20vw;
     object-fit: cover;
 }
 button.badge{
@@ -31,5 +31,4 @@ button.badge{
 .detailed-info-image{
     width: 20rem;
     border: 1px solid black;
-
 }
