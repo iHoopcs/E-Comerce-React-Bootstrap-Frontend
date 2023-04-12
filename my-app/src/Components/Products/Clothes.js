@@ -9,7 +9,7 @@ export default function Clothes(props) {
     return (
         <>
             <ProductsNavbar cart={cart}/>
-            <div className='container-fluid'>
+            <div className='container-fluid mb-3'>
                 <div className='row justify-content-center'>
                         {
                             //loop clothes array  & display data for each clothing item

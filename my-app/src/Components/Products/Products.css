@@ -18,3 +18,18 @@ button.badge{
     width: 1.5rem;
     margin-left: 5px;
 }
+
+.detailed-info-box-child-1{
+    border: solid white;
+    padding: 15px;
+}
+.detailed-info-box-child-2{
+    padding: 15px;
+    height: fit-content;
+}
+
+.detailed-info-image{
+    width: 20rem;
+    border: 1px solid black;
+
+}

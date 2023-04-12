@@ -26,7 +26,7 @@ const Body = () => {
 
         return (
         <>
-            <div className='container home-parent-container'>
+            <div className='container home-parent-container mb-5'>
                     <div className='col'>
                         <h1 className='home-display-title'>Coming Soon...</h1>
                         <div className='row justify-content-center'>
