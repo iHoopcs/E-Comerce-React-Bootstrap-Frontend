@@ -35,12 +35,12 @@ export default function DetailedProductPage(props){
                         <div className='row'>
                             <div className='col-5'>
                                 <div className=''>
-                                    <img src={product.imageUrl} alt={product.name} className='card style-card shadow-lg  mb-3'/>
+                                    <img src={product.imageUrl} alt={product.name} className='card style-detailed-info-card shadow-lg  mb-3'/>
                                 </div>
                             </div>
                             <div className='col'>
                                 <div>
-                                    <img src={product.imageUrl2} alt={product.name} className='card style-card shadow-lg  mx-4 mb-3'/>
+                                    <img src={product.imageUrl2} alt={product.name} className='card style-detailed-info-card shadow-lg  mx-4 mb-3'/>
                                 </div>
                             </div>
                         </div>
@@ -48,12 +48,12 @@ export default function DetailedProductPage(props){
                         <div className='row'>
                             <div className='col-5'>
                                 <div>
-                                    <img src={product.imageUrl3} alt={product.name} className='card style-card shadow-lg mb-3'/>
+                                    <img src={product.imageUrl3} alt={product.name} className='card style-detailed-info-card shadow-lg mb-3'/>
                                 </div>
                             </div>
                             <div className='col'>
                                 <div>
-                                    <img src={product.imageUrl4} alt={product.name} className='card style-card shadow-lg mx-4 mb-3'/>
+                                    <img src={product.imageUrl4} alt={product.name} className='card style-detailed-info-card shadow-lg mx-4 mb-3'/>
                                 </div>
                             </div>
                         </div>

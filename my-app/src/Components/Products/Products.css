@@ -8,7 +8,7 @@
 }
 .card-img-top{
     width: 100%;
-    height: 20vw;
+    height: 14vw;
     object-fit: cover;
 }
 button.badge{
@@ -33,7 +33,7 @@ button.badge{
     width: 20rem;
     border: 1px solid black;
 }
-.style-card{
+.style-detailed-info-card{
     width: 23rem;
     height: 18vw;
     background-color: white;
@@ -41,3 +41,9 @@ button.badge{
     object-fit: contain;
 }
 
+/*Display Card js*/
+.style-display-card{
+    width: 20rem;
+    height: 22vw;
+
+}
