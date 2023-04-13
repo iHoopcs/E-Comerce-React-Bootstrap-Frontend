@@ -5,7 +5,8 @@ import {useEffect, useState} from "react";
 import DisplayCard from "../Products/DisplayCard";
 
 const Body = () => {
-    const API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
+    const REMOTE_API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
+    //const LOCAL_API_URL = 'http://localhost:5000';
 
     //fetch clothes & shoes from Homepage component
     const [upcomingReleases, setUpcomingReleases] = useState([]);
@@ -13,7 +14,7 @@ const Body = () => {
     //fetch upcoming shoes & clothing from backend
     const fetchUpcomingReleases = async () => {
         try {
-            const response = await axios(API_URL + '/upcomingReleases');
+            const response = await axios(REMOTE_API_URL + '/upcomingReleases');
             console.log(response.data);
             setUpcomingReleases(response.data);
         }catch (error){
@@ -26,9 +27,9 @@ const Body = () => {
 
         return (
         <>
-            <div className='container home-parent-container'>
+            <div className='container home-parent-container mb-5'>
                     <div className='col'>
-                        <h1 className='home-display-title'>Upcoming Releases</h1>
+                        <h1 className='home-display-title'>Coming Soon...</h1>
                         <div className='row justify-content-center'>
                             {
                                 //display each item in Display card comp

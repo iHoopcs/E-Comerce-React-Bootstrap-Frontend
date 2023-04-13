@@ -8,7 +8,7 @@
 }
 .card-img-top{
     width: 100%;
-    height: 15vw;
+    height: 20vw;
     object-fit: cover;
 }
 button.badge{
@@ -17,4 +17,33 @@ button.badge{
     color: white;
     width: 1.5rem;
     margin-left: 5px;
+}
+
+/*Detailed Product Page js */
+.detailed-info-box-child-1{
+    border: solid white;
+    padding: 15px;
+}
+.detailed-info-box-child-2{
+    padding: 15px;
+    height: fit-content;
+}
+
+.detailed-info-image{
+    width: 20rem;
+    border: 1px solid black;
+}
+.style-detailed-info-card{
+    width: 23rem;
+    height: 18vw;
+    background-color: white;
+    border-radius: 0px;
+    object-fit: contain;
+}
+
+/*Display Card js*/
+.style-display-card{
+    width: 20rem;
+    height: 100%;
+
 }

@@ -5,7 +5,7 @@ export default function DisplayCard(props){
     const { item } = props;
     return (
         <>
-            <div className='card'>
+            <div className='card shadow style-display-card mx-4 mb-4'>
                 <img src={item.imageUrl} alt={item.name} className='card-img-top'/>
                 <div className='card-body'>
                     <h4>{item.brand} {item.name}</h4>

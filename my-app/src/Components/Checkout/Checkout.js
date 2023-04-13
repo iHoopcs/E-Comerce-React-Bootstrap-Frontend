@@ -36,8 +36,9 @@ function CheckoutNavbar(props){
 }
 
 export default function Checkout(props){
-    //remote backend api
-    const API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
+
+    const REMOTE_API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
+    //const LOCAL_API_URL = 'http://localhost:5000';
 
     const { cart } = props;
 
@@ -46,7 +47,7 @@ export default function Checkout(props){
 
     const placeOrder = () =>{
         //send delete request -> delete all cart items in db
-        axios.delete(API_URL + '/resetCart')
+        axios.delete(REMOTE_API_URL + '/resetCart')
             .then(response => {console.log(response)});
 
         //onclick -> go to route

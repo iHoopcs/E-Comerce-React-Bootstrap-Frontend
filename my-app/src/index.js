@@ -12,15 +12,17 @@ import Shoes from "./Components/Products/Shoes";
 import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderConfirmation from "./Components/Checkout/OrderConfirmation";
+import DetailedProductPage from "./Components/Products/DetailedProductPage";
 
 const App = () => {
-    const API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
-    
+    const REMOTE_API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
+    //const LOCAL_API_URL = 'http://localhost:5000';
+
     //fetch shoes from api
     const [shoes, setShoes] = useState([]);
     const fetchShoesData = async () => {
         try{
-            const response = await axios(API_URL + '/shoes');
+            const response = await axios(REMOTE_API_URL + '/shoes');
             //console.log(response.data);
             setShoes(response.data);
         }catch (error){
@@ -35,7 +37,7 @@ const App = () => {
     const [clothes, setClothes] = useState([]);
     const fetchClothingData = async () => {
         try{
-            const response = await axios(API_URL + '/clothing');
+            const response = await axios(REMOTE_API_URL + '/clothing');
             //console.log(response.data);
             setClothes(response.data);
         }catch (error){
@@ -50,7 +52,7 @@ const App = () => {
     const [cart, setCart] = useState([]);
     const fetchCart = async () => {
         try {
-            const response = await axios.get(API_URL + '/cart')
+            const response = await axios.get(REMOTE_API_URL + '/cart')
             setCart(response.data);
         }catch (error){
             console.log(error.response);
@@ -71,6 +73,30 @@ const App = () => {
                 <Route path='/cart' element={<Cart cart={cart}/>}/>
                 <Route path='checkout' element={<Checkout cart={cart}/>}/>
                 <Route path='/confirmationPage' element={<OrderConfirmation />}/>
+                
+                {
+                    //create individual routes for each product -> render each info page
+                    shoes.map((product) => {
+                        return (
+                            <Route 
+                                path={`/products/${product.id}/${product.brand}/${product.name}`}
+                                element={<DetailedProductPage product={product} cart={cart}/>}
+                            />
+                        )
+                    })
+                }
+
+                {
+                    //create individual routes for each product -> render each info page
+                    clothes.map((product) => {
+                        return (
+                            <Route 
+                                path={`/products/${product.id}/${product.brand}/${product.name}`}
+                                element={<DetailedProductPage product={product} cart={cart}/>}
+                                />
+                        )
+                    })
+                }
             </Routes>
         </BrowserRouter>
     );
