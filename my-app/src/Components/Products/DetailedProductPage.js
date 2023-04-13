@@ -1,16 +1,18 @@
 import ProductsNavbar from "./ProductsNavbar";
 import axios from "axios";
+import './DetailedProductPage.css';
 
 export default function DetailedProductPage(props){
     const { product, cart } = props; 
+    console.log(product)
 
+    //const API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
+    const LOCAL_API_URL = 'http://localhost:5000';
 
-    const API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
     //make post request onclick -> send item to backend -> add to db
     const addItem = async () => {
-        alert('Added to Cart!')
         try {
-            await axios.post(API_URL + '/addToCart', {
+            await axios.post(LOCAL_API_URL + '/addToCart', {
                 id: product.id,
                 name: product.name,
                 brand: product.brand,
@@ -30,11 +32,33 @@ export default function DetailedProductPage(props){
             <ProductsNavbar cart={cart} />
             <div className='container'>
                 <div className='row'>
-                    <div className='col-8 detailed-info-box-child-1 mx-3 '>
-                            <img src={product.imageUrl} alt={product.name} className='detailed-info-image mx-2 mb-3'/>
-                            <img src={product.imageUrl} alt={product.name} className='detailed-info-image mx-2 mb-3'/>
-                            <img src={product.imageUrl} alt={product.name} className='detailed-info-image mx-2 mb-3'/>
-                            <img src={product.imageUrl} alt={product.name} className='detailed-info-image mx-2 mb-3'/>
+                    <div className='col-8 detailed-info-box-child-1  '>
+                        <div className='row'>
+                            <div className='col-5'>
+                                <div className=''>
+                                    <img src={product.imageUrl} alt={product.name} className='card  mb-3'/>
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div>
+                                    <img src={product.imageUrl2} alt={product.name} className='card  mx-3 mb-3'/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='row'>
+                            <div className='col-5'>
+                                <div>
+                                    <img src={product.imageUrl3} alt={product.name} className='card  mb-3'/>
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div>
+                                    <img src={product.imageUrl4} alt={product.name} className='card  mx-3 mb-3'/>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div className='col detailed-info-box-child-2 text-center'>

@@ -12,16 +12,17 @@ import Shoes from "./Components/Products/Shoes";
 import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderConfirmation from "./Components/Checkout/OrderConfirmation";
-import DetailedProductPage from './Components/Products/DetailedProductPage';
+import DetailedProductPage from "./Components/Products/DetailedProductPage";
 
 const App = () => {
-    const API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
-    
+    //const API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
+    const LOCAL_API_URL = 'http://localhost:5000';
+
     //fetch shoes from api
     const [shoes, setShoes] = useState([]);
     const fetchShoesData = async () => {
         try{
-            const response = await axios(API_URL + '/shoes');
+            const response = await axios(LOCAL_API_URL + '/shoes');
             //console.log(response.data);
             setShoes(response.data);
         }catch (error){
@@ -36,7 +37,7 @@ const App = () => {
     const [clothes, setClothes] = useState([]);
     const fetchClothingData = async () => {
         try{
-            const response = await axios(API_URL + '/clothing');
+            const response = await axios(LOCAL_API_URL + '/clothing');
             //console.log(response.data);
             setClothes(response.data);
         }catch (error){
@@ -51,7 +52,7 @@ const App = () => {
     const [cart, setCart] = useState([]);
     const fetchCart = async () => {
         try {
-            const response = await axios.get(API_URL + '/cart')
+            const response = await axios.get(LOCAL_API_URL + '/cart')
             setCart(response.data);
         }catch (error){
             console.log(error.response);
