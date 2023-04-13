@@ -5,13 +5,13 @@ export default function DetailedProductPage(props){
     const { product, cart } = props; 
     console.log(product)
 
-    //const API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
-    const LOCAL_API_URL = 'http://localhost:5000';
+    const REMOTE_API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
+    //const LOCAL_API_URL = 'http://localhost:5000';
 
     //make post request onclick -> send item to backend -> add to db
     const addItem = async () => {
         try {
-            await axios.post(LOCAL_API_URL + '/addToCart', {
+            await axios.post(REMOTE_API_URL + '/addToCart', {
                 id: product.id,
                 name: product.name,
                 brand: product.brand,
