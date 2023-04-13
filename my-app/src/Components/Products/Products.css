@@ -19,6 +19,7 @@ button.badge{
     margin-left: 5px;
 }
 
+/*Detailed Product Page js */
 .detailed-info-box-child-1{
     border: solid white;
     padding: 15px;
@@ -32,3 +33,11 @@ button.badge{
     width: 20rem;
     border: 1px solid black;
 }
+.style-card{
+    width: 23rem;
+    height: 18vw;
+    background-color: white;
+    border-radius: 0px;
+    object-fit: contain;
+}
+
