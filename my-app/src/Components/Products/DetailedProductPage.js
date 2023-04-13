@@ -62,7 +62,8 @@ export default function DetailedProductPage(props){
 
                     <div className='col detailed-info-box-child-2 text-center'>
                         <h3>{product.brand} {product.name}</h3>
-                        <h4 className='text-muted'>${product.price}</h4>
+                        <h4 className='text-muted mb-5'>${product.price}</h4>
+                        <p>{product.description}</p>
                         <button className='btn btn-secondary mt-5' onClick={addItem}>Add to Cart</button>
                     </div>
                 </div>
