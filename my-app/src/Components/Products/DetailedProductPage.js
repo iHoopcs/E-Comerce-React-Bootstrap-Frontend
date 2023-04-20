@@ -19,7 +19,6 @@ export default function DetailedProductPage(props) {
           price: product.price,
           imageUrl: product.imageUrl,
           qty: product.qty + 1,
-          addedToCart: true,
         })
         .then((response) => {
           console.log(response);
@@ -85,13 +84,9 @@ export default function DetailedProductPage(props) {
             </h3>
             <h4 className="text-muted mb-5">${product.price}</h4>
             <p>{product.description}</p>
-            {product.addedToCart === true ? (
-              "Added to Cart!"
-            ) : (
-              <button className="btn btn-secondary mt-5" onClick={addItem}>
-                Add to Cart
-              </button>
-            )}
+            <button className="btn btn-secondary mt-5" onClick={addItem}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
