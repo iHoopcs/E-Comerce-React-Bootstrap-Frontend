@@ -8,6 +8,7 @@ export default function Header() {
           <Nav className="me-auto">
             <Nav.Link href="/shoes">Shoes</Nav.Link>
             <Nav.Link href="/clothes">Clothes</Nav.Link>
+            <Nav.Link href="/accessories">Accessories</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link href="/login">Login</Nav.Link>

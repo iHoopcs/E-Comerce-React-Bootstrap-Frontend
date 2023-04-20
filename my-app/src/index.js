@@ -13,6 +13,7 @@ import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderConfirmation from "./Components/Checkout/OrderConfirmation";
 import DetailedProductPage from "./Components/Products/DetailedProductPage";
+import Accessories from "./Components/Products/Accessories";
 
 const App = () => {
   //const REMOTE_API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
@@ -48,6 +49,21 @@ const App = () => {
     fetchClothingData();
   }, []);
 
+  //fetch accessories from api
+  const [accessories, setAccessories] = useState([]);
+  const fetchAccessories = async () => {
+    try {
+      const response = await axios(LOCAL_API_URL + "/accessories");
+      //console.log(response.data);
+      setAccessories(response.data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+  useEffect(() => {
+    fetchAccessories();
+  }, []);
+
   //fetch cartItems from api
   const [cart, setCart] = useState([]);
   const fetchCart = async () => {
@@ -71,6 +87,10 @@ const App = () => {
           element={<Clothes clothes={clothes} cart={cart} />}
         />
         <Route path="/shoes" element={<Shoes shoes={shoes} cart={cart} />} />
+        <Route
+          path="/accessories"
+          element={<Accessories accessories={accessories} cart={cart} />}
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<Cart cart={cart} />} />
@@ -92,6 +112,18 @@ const App = () => {
         {
           //create individual routes for each product -> render each info page
           clothes.map((product) => {
+            return (
+              <Route
+                path={`/products/${product.id}/${product.brand}/${product.name}`}
+                element={<DetailedProductPage product={product} cart={cart} />}
+              />
+            );
+          })
+        }
+
+        {
+          //create individual routes for each product -> render each info page
+          accessories.map((product) => {
             return (
               <Route
                 path={`/products/${product.id}/${product.brand}/${product.name}`}
