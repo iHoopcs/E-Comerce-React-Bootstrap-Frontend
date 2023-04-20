@@ -11,6 +11,7 @@
     height: 20vw;
     object-fit: cover;
 }
+
 button.badge{
     background-color: indianred;
     border: none;
@@ -41,9 +42,5 @@ button.badge{
     object-fit: contain;
 }
 
-/*Display Card js*/
-.style-display-card{
-    width: 20rem;
-    height: 100%;
 
-}
+
