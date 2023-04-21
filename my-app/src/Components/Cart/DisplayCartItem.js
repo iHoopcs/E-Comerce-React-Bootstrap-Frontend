@@ -1,8 +1,8 @@
 import axios from "axios";
 import "./Cart.css";
 export default function DisplayCartItem(props) {
-  //const REMOTE_API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
-  const LOCAL_API_URL = "http://localhost:5000";
+  const REMOTE_API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
+  //const LOCAL_API_URL = "http://localhost:5000";
 
   const { item } = props;
 
@@ -10,7 +10,7 @@ export default function DisplayCartItem(props) {
   const incrementQty = async () => {
     try {
       await axios
-        .put(LOCAL_API_URL + "/incrementQty", {
+        .put(REMOTE_API_URL + "/incrementQty", {
           id: item.id,
           name: item.name,
           brand: item.brand,
@@ -31,7 +31,7 @@ export default function DisplayCartItem(props) {
   const decrementQty = async () => {
     try {
       await axios
-        .put(LOCAL_API_URL + "/decrementQty", {
+        .put(REMOTE_API_URL + "/decrementQty", {
           id: item.id,
           name: item.name,
           brand: item.brand,
