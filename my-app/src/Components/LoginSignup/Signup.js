@@ -6,10 +6,13 @@ import {useNavigate} from "react-router-dom";
 export default function Signup(){
     const navigate = useNavigate();
 
+    const toLoginPage = () => {
+        //redirect page to url
+        navigate('/login');
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Account Created \nProceed to Login')
-        navigate('/login');
+        setTimeout(() => toLoginPage(), 1000);
     }
 
     return (

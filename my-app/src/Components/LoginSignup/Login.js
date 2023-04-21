@@ -6,11 +6,14 @@ import {useNavigate} from "react-router-dom";
 export default function Login(){
     let navigate = useNavigate();
 
+    const toHomepage = () => {
+        //redirect page to url
+        navigate('/');
+    }
     function handleSubmit(e){
         //prevent default form submission
         e.preventDefault();
-        alert('Navigating to Homepage...')
-        navigate('/');
+        setTimeout(() => toHomepage(), 1000)
     }
 
     return (
