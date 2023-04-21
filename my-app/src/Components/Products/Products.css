@@ -42,5 +42,10 @@ button.badge{
     object-fit: contain;
 }
 
+.navbar-header{
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
 
 

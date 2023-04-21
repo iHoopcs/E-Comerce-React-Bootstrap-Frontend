@@ -5,7 +5,7 @@ export default function ProductsNavbar(props) {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" sticky="top" className="mb-4">
+      <Navbar bg="dark" variant="dark" sticky="top" className="mb-4 py-3 navbar-header">
         <Container>
           <Navbar.Brand href="/">E-Commerce Shopping</Navbar.Brand>
           <Nav className="me-auto">
