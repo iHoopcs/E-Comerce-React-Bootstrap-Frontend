@@ -84,9 +84,11 @@ export default function DetailedProductPage(props) {
             </h3>
             <h4 className="text-muted mb-5">${product.price}</h4>
             <p>{product.description}</p>
-            <button className="btn btn-secondary mt-5" onClick={addItem}>
-              Add to Cart
-            </button>
+            {
+              //compare item in cart with current product -> if names same -> item already in cart -> display message / hide add to cart
+              cart.some(cartItem => cartItem.name === product.name ) ? <h4 className='text-muted mt-5'>Added to Cart!</h4> : <button className="btn btn-secondary mt-5" onClick={addItem}>Add to Cart</button>
+            }
+
           </div>
         </div>
       </div>
