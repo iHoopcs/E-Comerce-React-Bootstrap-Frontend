@@ -18,7 +18,7 @@ export default function DetailedProductPage(props) {
           brand: product.brand,
           price: product.price,
           imageUrl: product.imageUrl,
-          qty: product.qty + 1,
+          qty: product.qty + 1
         })
         .then((response) => {
           console.log(response);
