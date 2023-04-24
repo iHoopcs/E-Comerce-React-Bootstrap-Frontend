@@ -21,7 +21,7 @@ export default function Cart(props){
             <Header />
             <div className='container cart-parent-container'>
                 <div className='row justify-content-center'>
-                    <div className='col-md-6 cart-child-container-1'>
+                    <div className='col-md-7 cart-child-container-1'>
                         <h1 className='mx-3 mb-4' >Cart</h1>
                         <div>
                             {
@@ -35,7 +35,7 @@ export default function Cart(props){
                         </div>
                     </div>
 
-                    <div className='col-md-4 cart-child-container-2 mx-3' >
+                    <div className='col-md-3 cart-child-container-2 mx-3' >
                         <h1>Summary</h1>
                         {
                             cart.map((item) => {

@@ -50,7 +50,7 @@ export default function DetailedProductPage(props) {
                   <img
                     src={product.imageUrl2}
                     alt={product.name}
-                    className="card style-detailed-info-card shadow-lg  mx-4 mb-3"
+                    className="card style-detailed-info-card shadow-lg mb-3"
                   />
                 </div>
               </div>
@@ -71,7 +71,7 @@ export default function DetailedProductPage(props) {
                   <img
                     src={product.imageUrl4}
                     alt={product.name}
-                    className="card style-detailed-info-card shadow-lg mx-4 mb-3"
+                    className="card style-detailed-info-card shadow-lg mb-3"
                   />
                 </div>
               </div>
