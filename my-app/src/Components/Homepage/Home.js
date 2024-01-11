@@ -3,6 +3,7 @@ import Header from "../Header";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import UpcomingReleaseCard from "../Products/UpcomingReleaseCard";
+import Footer from "../footer";
 
 const Body = () => {
   const LOCAL_API_URL = "http://localhost:8080";
@@ -51,6 +52,7 @@ export default function Home(props) {
         <div>
           <Body clothes={clothes} shoes={shoes} />
         </div>
+        <Footer />
       </div>
     </>
   );

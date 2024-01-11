@@ -3,6 +3,7 @@ import DisplayCartItem from "./DisplayCartItem";
 import './Cart.css'
 import {useEffect, useState} from "react";
 
+
 export default function Cart(props){
     const { cart } = props;
     const [totalPrice, setTotalPrice] = useState(0);
@@ -70,7 +71,7 @@ export default function Cart(props){
             </div>
 
 
-
+            
         </>
     );
 }

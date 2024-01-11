@@ -5,7 +5,7 @@ export default function UpcomingReleaseCard(props) {
   const { item } = props;
   return (
     <>
-      <div className="card shadow mx-4 mb-4">
+      <div className="card shadow mx-4 mb-4 product-card">
         <img src={item.imageUrl} alt={item.name} className="card-img-top" />
         <div className="card-body">
           <h4>

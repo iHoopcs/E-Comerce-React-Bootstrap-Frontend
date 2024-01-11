@@ -1,6 +1,7 @@
 import './Products.css';
 import ProductCard from "./ProductCard";
 import ProductsNavbar from './ProductsNavbar';
+import Footer from "../footer";
 
 export default function Shoes(props) {
     //fetch props from index.js useState variable
@@ -24,6 +25,7 @@ export default function Shoes(props) {
                     }
                 </div>
             </div>
+            <Footer />
 
         </>
     );
