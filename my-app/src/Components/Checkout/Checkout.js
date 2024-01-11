@@ -6,8 +6,7 @@ import DisplayCheckoutItem from "./DisplayCheckoutItem";
 import ProductsNavbar from "../Products/ProductsNavbar";
 
 export default function Checkout(props) {
-  const REMOTE_API_URL = 'http://springbootbackendecommerce-env.eba-biverqpa.us-east-2.elasticbeanstalk.com';
-  //const LOCAL_API_URL = "http://localhost:5000";
+  const LOCAL_API_URL = "http://localhost:8080";
 
   const { cart } = props;
 
@@ -21,7 +20,7 @@ export default function Checkout(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     //send delete request -> delete all cart items in db
-    axios.delete(REMOTE_API_URL + "/resetCart").then((response) => {
+    axios.delete(LOCAL_API_URL + "/resetCart").then((response) => {
       console.log(response);
     });
     setTimeout(() => toConfirmationPage(), 1500)
