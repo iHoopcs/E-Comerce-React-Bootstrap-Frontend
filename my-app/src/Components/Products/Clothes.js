@@ -1,4 +1,4 @@
-import ProductCard from "./ProductCard";
+import ClothingProductCard from "./ClothingProductCard";
 import './Products.css';
 import ProductsNavbar from "./ProductsNavbar";
 import Footer from "../footer";
@@ -16,7 +16,7 @@ export default function Clothes(props) {
                             //loop clothes array  & display data for each clothing item
                             clothes.map((item) => {
                                 return (
-                                    <ProductCard
+                                    <ClothingProductCard
                                         key={item.id}
                                         item={item}
                                     />

@@ -1,5 +1,5 @@
 import './Products.css';
-import ProductCard from "./ProductCard";
+import ShoeProductCard from "./ShoeProductCard";
 import ProductsNavbar from './ProductsNavbar';
 import Footer from "../footer";
 
@@ -16,7 +16,7 @@ export default function Shoes(props) {
                         //loop shoes array -> display info for each shoe item
                         shoes.map((item) => {
                             return (
-                                <ProductCard
+                                <ShoeProductCard
                                     key={item.id}
                                     item={item}
                                 />

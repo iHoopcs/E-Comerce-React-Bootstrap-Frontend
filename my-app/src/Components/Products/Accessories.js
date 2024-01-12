@@ -1,5 +1,6 @@
 import ProductsNavbar from "./ProductsNavbar";
-import ProductCard from "./ProductCard";
+import AccessoryProductCard from "./ShoeProductCard";
+
 
 export default function Accessories(props) {
   const { accessories, cart } = props;
@@ -11,7 +12,7 @@ export default function Accessories(props) {
           {
             //loop accessories array & display each item
             accessories.map((item) => {
-              return <ProductCard key={item.id} item={item} />;
+              return <AccessoryProductCard key={item.id} item={item} />;
             })
           }
         </div>

@@ -1,7 +1,8 @@
 import ProductsNavbar from "./ProductsNavbar";
 import axios from "axios";
+import Footer from '../footer'; 
 
-export default function DetailedProductPage(props) {
+export default function DetailedShoeProductPage(props) {
   const { product, cart } = props;
   console.log(product);
 
@@ -83,6 +84,27 @@ export default function DetailedProductPage(props) {
             </h3>
             <h4 className="text-muted mb-5">${product.price}</h4>
             <p>{product.description}</p>
+
+            <h5 className="mb-5">Select Your Size</h5>
+              <div className="mb-4">
+                <button className="mx-2 btn btn-secondary">5</button>
+                <button className="mx-2 btn btn-secondary">6</button>
+                <button className="mx-2 btn btn-secondary">7</button>
+                <button className="mx-2 btn btn-secondary">8</button>
+                <button className="mx-2 btn btn-secondary">9</button>
+                <button className="mx-2 btn btn-secondary">10</button>
+              </div>
+
+              <div>
+                <button className="mx-2 btn btn-secondary">11</button>
+                <button className="mx-2 btn btn-secondary">12</button>
+                <button className="mx-2 btn btn-secondary">13</button>
+                <button className="mx-2 btn btn-secondary">14</button>
+                <button className="mx-2 btn btn-secondary">15</button>
+                <button className="mx-2 btn btn-secondary">16</button>
+              </div>
+            
+            
             {
               //compare item in cart with current product -> if names same -> item already in cart -> display message / hide add to cart
               cart.some(cartItem => cartItem.name === product.name ) ? <h4 className='text-muted mt-5'>Added to Cart!</h4> : <button className="btn btn-secondary mt-5" onClick={addItem}>Add to Cart</button>
@@ -91,6 +113,7 @@ export default function DetailedProductPage(props) {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

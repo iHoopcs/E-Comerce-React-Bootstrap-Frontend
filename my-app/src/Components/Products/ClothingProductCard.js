@@ -1,13 +1,13 @@
 import "./Products.css";
 
-export default function ProductCard(props) {
+export default function ClothingProductCard(props) {
   const { item } = props;
   console.log(item);
   return (
     //product display card -> displays information -> encloses image with href
     <>
       <div className="card shadow mb-4 mx-4 product-card">
-        <a href={`/products/${item.id}/${item.brand}/${item.name}`}>
+        <a href={`/products/clothing/${item.id}/${item.brand}/${item.name}`}>
           <img src={item.imageUrl} alt={item.name} className="card-img-top" />
         </a>
         <div className="card-body">

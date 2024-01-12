@@ -12,7 +12,9 @@ import Shoes from "./Components/Products/Shoes";
 import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderConfirmation from "./Components/Checkout/OrderConfirmation";
-import DetailedProductPage from "./Components/Products/DetailedProductPage";
+import DetailedClothingProductPage from "./Components/Products/DetailedClothingProductPage";
+import DetailedShoeProductPage from "./Components/Products/DetailedShoeProductPage";
+import DetailedAccessoryProductPage from "./Components/Products/DetailedAccessoryProductPage";
 import Accessories from "./Components/Products/Accessories";
 
 const App = () => {
@@ -98,24 +100,24 @@ const App = () => {
         <Route path="/confirmationPage" element={<OrderConfirmation />} />
 
         {
-          //create individual routes for each product -> render each info page
+          //create individual routes for each shoe product -> render each info page
           shoes.map((product) => {
             return (
               <Route
-                path={`/products/${product.id}/${product.brand}/${product.name}`}
-                element={<DetailedProductPage product={product} cart={cart} />}
+                path={`/products/shoe/${product.id}/${product.brand}/${product.name}`}
+                element={<DetailedShoeProductPage product={product} cart={cart} />}
               />
             );
           })
         }
 
         {
-          //create individual routes for each product -> render each info page
+          //create individual routes for each clothing product -> render each info page
           clothes.map((product) => {
             return (
               <Route
-                path={`/products/${product.id}/${product.brand}/${product.name}`}
-                element={<DetailedProductPage product={product} cart={cart} />}
+                path={`/products/clothing/${product.id}/${product.brand}/${product.name}`}
+                element={<DetailedClothingProductPage product={product} cart={cart} />}
               />
             );
           })
@@ -126,8 +128,8 @@ const App = () => {
           accessories.map((product) => {
             return (
               <Route
-                path={`/products/${product.id}/${product.brand}/${product.name}`}
-                element={<DetailedProductPage product={product} cart={cart} />}
+                path={`/products/accessory/${product.id}/${product.brand}/${product.name}`}
+                element={<DetailedAccessoryProductPage product={product} cart={cart} />}
               />
             );
           })
