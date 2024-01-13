@@ -50,20 +50,20 @@ export default function DisplayCartItem(props) {
   return (
     <>
       <div className="container">
-        <div className="row mx-4 g-5">
-          <div className="col-8">
-            <div className="row g-0">
-              <div className="col-5">
-                <div className="card cart-card-image">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.name}
-                    className="card-img"
-                  />
-                </div>
-              </div>
+        <div className="row">
+          
+          <div className="col-3 mx-2"> 
+            <div className="card cart-card-image">
+              <img
+                src={item.imageUrl}
+                alt={item.name}
+                className="card-img"
+              />
+            </div>
+          </div>
 
-              <div className="col-4 mt-2">
+          <div className="col mt-3">
+            <div>
                 <h5>
                   {item.brand} {item.name}
                 </h5>
@@ -72,27 +72,24 @@ export default function DisplayCartItem(props) {
                   <p className="text-muted me-auto">Qty: {item.qty}</p>
                   <p className="text-muted me-auto">Size: {item.size}</p>
                 </div>
-                
-              </div>
             </div>
           </div>
 
-          <div className="col mt-5 mx-3">
-            <div>
+          <div className="col-2 mt-5">
               <button
-                className="btn btn-secondary mx-1 "
+                className="btn btn-secondary mx-2"
                 onClick={incrementQty}
               >
                 +
               </button>
-              <button className="btn btn-danger" onClick={decrementQty}>
+              <button className="btn btn-danger mx-1" onClick={decrementQty}>
                 -
               </button>
-            </div>
           </div>
 
-          <hr className="mb-5 mt-5"></hr>
         </div>
+
+        <hr className="mb-5 mt-5"></hr>
       </div>
     </>
   );

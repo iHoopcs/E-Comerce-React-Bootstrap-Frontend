@@ -22,8 +22,8 @@ export default function Cart(props){
             <Header />
             <div className='container cart-parent-container'>
                 <div className='row justify-content-center'>
-                    <div className='col-md-7 cart-child-container-1'>
-                        <h1 className='mx-3 mb-4' >Cart</h1>
+                    <div className='col-7 cart-child-container-1 mt-3'>
+                        <h1 className='mx-3 mb-4'>Shopping Cart</h1>
                         <div>
                             {
                                 cart.length === 0 ? <p className='text-danger mx-3'>No Items Added to Cart</p> :
@@ -36,7 +36,7 @@ export default function Cart(props){
                         </div>
                     </div>
 
-                    <div className='col-md-3 cart-child-container-2 mx-3' >
+                    <div className='col cart-child-container-2 mx-4 mt-3' >
                         <h1>Summary</h1>
                         {
                             cart.map((item) => {
