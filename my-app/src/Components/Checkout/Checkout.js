@@ -4,6 +4,7 @@ import "./CartCheckout.css";
 import axios from "axios";
 import DisplayCheckoutItem from "./DisplayCheckoutItem";
 import ProductsNavbar from "../Products/ProductsNavbar";
+import Footer from '../footer'; 
 
 export default function Checkout(props) {
   const LOCAL_API_URL = "http://localhost:8080";
@@ -96,6 +97,7 @@ export default function Checkout(props) {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

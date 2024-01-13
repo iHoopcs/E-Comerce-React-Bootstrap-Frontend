@@ -27,9 +27,11 @@
 }
 
 /*Confirmation Page Styling*/
-.confirmation-container{
-    text-align: center;
-    font-family: Dialog;
+.order-confirmation{
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
