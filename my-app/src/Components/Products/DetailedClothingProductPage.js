@@ -1,10 +1,13 @@
 import ProductsNavbar from "./ProductsNavbar";
 import axios from "axios";
 import Footer from "../footer"; 
+import { useState } from "react";
 
 export default function DetailedClothingProductPage(props) {
   const { product, cart } = props;
+  const [clothingSize, setClothingSize] = useState(""); //responsible for setting & displaying clothing item size
   console.log(product);
+
 
   const LOCAL_API_URL = "http://localhost:8080";
 
@@ -18,7 +21,8 @@ export default function DetailedClothingProductPage(props) {
           brand: product.brand,
           price: product.price,
           imageUrl: product.imageUrl,
-          qty: product.qty + 1
+          qty: product.qty + 1, 
+          size: clothingSize
         })
         .then((response) => {
           console.log(response);
@@ -85,23 +89,27 @@ export default function DetailedClothingProductPage(props) {
             <h4 className="text-muted mb-5">${product.price}</h4>
             <p>{product.description}</p>
 
-            <h5>Select Your Size</h5>
-            <div className="row justify-content-around mt-5">
-              <div className="col-4">
-                <button className="btn btn-secondary mb-3 clothing-size-button">Xtra-Small</button>
-                <button className="btn btn-secondary mb-3 clothing-size-button">Small</button>
-                <button className="btn btn-secondary clothing-size-button">Medium</button>
-              </div>
 
-              <div className="col-4">
-                <button className="btn btn-secondary mb-3 clothing-size-button">Large</button>
-                <button className="btn btn-secondary mb-3 clothing-size-button">Large-Tall</button>
-                <button className="btn btn-secondary  clothing-size-button">Xtra-Large</button>
-              </div>
+            <div>
+              <select className="form-select"
+                onChange={(e) => {
+                  const selectedSize = e.target.value; 
+                  setClothingSize(selectedSize); 
+                }}
+              >
+                <option value={""}>Select Your Size</option>
+                <option value={"XS"}>XS</option>
+                <option value={"S"}>S</option>
+                <option value={"M"}>M</option>
+                <option value={"L"}>L</option>
+                <option value={"XL"}>XL</option>
+              </select>
             </div>
             {
-              //compare item in cart with current product -> if names same -> item already in cart -> display message / hide add to cart
-              cart.some(cartItem => cartItem.name === product.name ) ? <h4 className='text-muted mt-5'>Added to Cart!</h4> : <button className="btn btn-secondary mt-5" onClick={addItem}>Add to Cart</button>
+              (!cart.some(cartItem => cartItem.name === product.name ) && clothingSize === "") ? <button className="btn btn-secondary mt-5" disabled>Add to Cart</button>//if item is not in cart but user hasn't selected size - disable add to cart
+                :(cart.some(cartItem => cartItem.name === product.name )) ? <h4 className="text-muted mt-5">Added to cart!</h4>//if item is already in cart - display text
+                  :<button className="btn btn-secondary mt-5" onClick={addItem}>Add to Cart</button>  //if neither conditions true - display add to cart button
+
             }
 
           </div>

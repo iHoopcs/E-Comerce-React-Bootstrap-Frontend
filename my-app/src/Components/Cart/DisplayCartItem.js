@@ -53,7 +53,7 @@ export default function DisplayCartItem(props) {
         <div className="row mx-4 g-5">
           <div className="col-8">
             <div className="row g-0">
-              <div className="col-9">
+              <div className="col-5">
                 <div className="card cart-card-image">
                   <img
                     src={item.imageUrl}
@@ -63,12 +63,16 @@ export default function DisplayCartItem(props) {
                 </div>
               </div>
 
-              <div className="col-2">
+              <div className="col-4 mt-2">
                 <h5>
                   {item.brand} {item.name}
                 </h5>
                 <p className="text-muted">${item.price}</p>
-                <p className="text-muted">Qty: {item.qty}</p>
+                <div className="d-flex">
+                  <p className="text-muted me-auto">Qty: {item.qty}</p>
+                  <p className="text-muted me-auto">Size: {item.size}</p>
+                </div>
+                
               </div>
             </div>
           </div>

@@ -1,9 +1,11 @@
 import ProductsNavbar from "./ProductsNavbar";
 import axios from "axios";
 import Footer from '../footer'; 
+import { useState } from "react";
 
 export default function DetailedShoeProductPage(props) {
   const { product, cart } = props;
+  const [shoeSize, setShoeSize] = useState(""); 
   console.log(product);
 
   const LOCAL_API_URL = "http://localhost:8080";
@@ -18,7 +20,8 @@ export default function DetailedShoeProductPage(props) {
           brand: product.brand,
           price: product.price,
           imageUrl: product.imageUrl,
-          qty: product.qty + 1
+          qty: product.qty + 1,
+          size: shoeSize
         })
         .then((response) => {
           console.log(response);
@@ -78,36 +81,41 @@ export default function DetailedShoeProductPage(props) {
             </div>
           </div>
 
-          <div className="col detailed-info-box-child-2 text-center">
+          <div className="col-4 detailed-info-box-child-2 text-center">
             <h3>
               {product.brand} {product.name}
             </h3>
             <h4 className="text-muted mb-5">${product.price}</h4>
             <p>{product.description}</p>
 
-            <h5 className="mb-5">Select Your Size</h5>
-              <div className="mb-4">
-                <button className="mx-2 btn btn-secondary">5</button>
-                <button className="mx-2 btn btn-secondary">6</button>
-                <button className="mx-2 btn btn-secondary">7</button>
-                <button className="mx-2 btn btn-secondary">8</button>
-                <button className="mx-2 btn btn-secondary">9</button>
-                <button className="mx-2 btn btn-secondary">10</button>
-              </div>
-
-              <div>
-                <button className="mx-2 btn btn-secondary">11</button>
-                <button className="mx-2 btn btn-secondary">12</button>
-                <button className="mx-2 btn btn-secondary">13</button>
-                <button className="mx-2 btn btn-secondary">14</button>
-                <button className="mx-2 btn btn-secondary">15</button>
-                <button className="mx-2 btn btn-secondary">16</button>
-              </div>
             
-            
+           
+            <div>
+              <select className="form-select"
+                onChange={(e) => {
+                  const selectedSize = e.target.value; 
+                  setShoeSize(selectedSize); 
+                }}
+              >
+                <option value={""}>Select Your Size</option>
+                <option value={"5"}>5</option>
+                <option value={"6"}>6</option>
+                <option value={"7"}>7</option>
+                <option value={"8"}>8</option>
+                <option value={"9"}>9</option>
+                <option value={"10"}>10</option>
+                <option value={"11"}>11</option>
+                <option value={"12"}>12</option>
+                <option value={"13"}>13</option>
+                <option value={"14"}>14</option>
+                <option value={"15"}>15</option>
+                <option value={"16"}>16</option>
+              </select>
+            </div>
             {
-              //compare item in cart with current product -> if names same -> item already in cart -> display message / hide add to cart
-              cart.some(cartItem => cartItem.name === product.name ) ? <h4 className='text-muted mt-5'>Added to Cart!</h4> : <button className="btn btn-secondary mt-5" onClick={addItem}>Add to Cart</button>
+              (!cart.some(cartItem => cartItem.name === product.name ) && shoeSize === "") ? <button className="btn btn-secondary mt-5" disabled>Add to Cart</button>//if item is not in cart but user hasn't selected size - disable add to cart
+                :(cart.some(cartItem => cartItem.name === product.name )) ? <h4 className="text-muted mt-5">Added to cart!</h4>//if item is already in cart - display text
+                  :<button className="btn btn-secondary mt-5" onClick={addItem}>Add to Cart</button>  //if neither conditions true - display add to cart button
             }
 
           </div>

@@ -8,7 +8,7 @@ export default function Cart(props){
     const { cart } = props;
     const [totalPrice, setTotalPrice] = useState(0);
 
-    //every refresh / change dependent on cart useState variable -> execute code -> calculate total price of cart itemss
+    //every refresh / change dependent on cart useState variable -> execute code -> calculate total price of cart items
     useEffect(() => {
         let calculateTotal = 0; 
         for (let i=0; i<cart.length; i++){
